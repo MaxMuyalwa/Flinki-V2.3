@@ -1,0 +1,22 @@
+node_modules/
+dist/
+dist-ssr/
+*.local
+build/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript
+*.tsbuildinfo
