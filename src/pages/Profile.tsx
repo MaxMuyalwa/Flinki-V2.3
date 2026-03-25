@@ -142,13 +142,13 @@ export default function Profile() {
       <div className="mb-8 flex justify-center gap-4">
         <button 
           onClick={() => setConnectDeviceModalOpen(true)}
-          className="flex items-center gap-2 rounded-full bg-flinki-navy px-8 py-3.5 text-sm font-black uppercase tracking-widest text-white shadow-lg transition-all hover:bg-flinki-orange hover:shadow-flinki-orange/20 active:scale-95"
+          className="flex items-center gap-2 rounded-full bg-slate-900 px-8 py-3.5 text-sm font-black uppercase tracking-widest text-white shadow-lg transition-all hover:bg-orange-500 hover:shadow-orange-500/20 active:scale-95"
         >
           Connect Device
         </button>
         <Link 
           to="/feed"
-          className="flex items-center gap-2 rounded-full bg-flinki-orange px-8 py-3.5 text-sm font-black uppercase tracking-widest text-white shadow-lg transition-all hover:bg-flinki-navy hover:shadow-flinki-navy/20 active:scale-95"
+          className="flex items-center gap-2 rounded-full bg-orange-500 px-8 py-3.5 text-sm font-black uppercase tracking-widest text-white shadow-lg transition-all hover:bg-slate-900 hover:shadow-slate-900/20 active:scale-95"
         >
           Feed
         </Link>
@@ -159,8 +159,8 @@ export default function Profile() {
         <div className="lg:col-span-1 space-y-6">
           <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-6 flex items-center gap-2">
-              <Users className="h-6 w-6 text-flinki-blue" />
-              <h3 className="text-sm font-black uppercase tracking-widest text-flinki-navy">Associated Groups</h3>
+              <Users className="h-6 w-6 text-blue-500" />
+              <h3 className="text-sm font-black uppercase tracking-widest text-slate-900">Associated Groups</h3>
             </div>
             
             <div className="space-y-4">
@@ -175,7 +175,7 @@ export default function Profile() {
               ))}
             </div>
             
-            <button className="mt-8 w-full rounded-xl border border-border py-3 text-xs font-black uppercase tracking-widest text-muted-foreground transition-all hover:bg-secondary hover:text-flinki-navy">
+            <button className="mt-8 w-full rounded-xl border border-border py-3 text-xs font-black uppercase tracking-widest text-muted-foreground transition-all hover:bg-secondary hover:text-slate-900">
               Find More Groups
             </button>
           </div>
@@ -186,12 +186,12 @@ export default function Profile() {
           <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-6 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Activity className="h-6 w-6 text-flinki-orange" />
-                <h3 className="text-sm font-black uppercase tracking-widest text-flinki-navy">Activity Logs</h3>
+                <Activity className="h-6 w-6 text-orange-500" />
+                <h3 className="text-sm font-black uppercase tracking-widest text-slate-900">Activity Logs</h3>
               </div>
               <button 
                 onClick={() => setManualActivityModalOpen(true)}
-                className="flex items-center gap-1.5 rounded-full bg-flinki-orange/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-flinki-orange hover:bg-flinki-orange/20 transition-colors"
+                className="flex items-center gap-1.5 rounded-full bg-orange-500/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-orange-500 hover:bg-orange-500/20 transition-colors"
               >
                 <Plus className="h-4 w-4" />
                 Manual Entry
@@ -200,9 +200,9 @@ export default function Profile() {
 
             <div className="space-y-3">
               {currentUser.activityLogs?.map((log: any) => (
-                <div key={log.id} className="flex items-center justify-between rounded-xl border border-border bg-secondary/30 p-4 transition-all hover:border-flinki-blue/30">
+                <div key={log.id} className="flex items-center justify-between rounded-xl border border-border bg-secondary/30 p-4 transition-all hover:border-blue-500/30">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-flinki-blue/10 text-flinki-blue">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10 text-blue-500">
                       <Activity className="h-6 w-6" />
                     </div>
                     <div>
@@ -211,14 +211,14 @@ export default function Profile() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-base font-black text-flinki-navy">{log.distance} • {log.duration}</p>
+                    <p className="text-base font-black text-slate-900">{log.distance} • {log.duration}</p>
                     <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{log.pace}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <button className="mt-6 w-full rounded-xl border border-border py-3 text-xs font-black uppercase tracking-widest text-muted-foreground transition-all hover:bg-secondary hover:text-flinki-navy">
+            <button className="mt-6 w-full rounded-xl border border-border py-3 text-xs font-black uppercase tracking-widest text-muted-foreground transition-all hover:bg-secondary hover:text-slate-900">
               <ListFilter className="inline-block h-4 w-4 mr-2" />
               View All Logs
             </button>
@@ -233,32 +233,32 @@ export default function Profile() {
               <div className="space-y-6" id="achievements">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-flinki-orange/10 text-flinki-orange ring-1 ring-flinki-orange/20">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10 text-orange-500 ring-1 ring-orange-500/20">
                       <Trophy className="h-6 w-6" />
                     </div>
                     <div>
-                      <h2 className="text-xl font-black uppercase tracking-tighter text-flinki-navy sm:text-2xl">Achievement Journey</h2>
+                      <h2 className="text-xl font-black uppercase tracking-tighter text-slate-900 sm:text-2xl">Achievement Journey</h2>
                       <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Your milestones & goals</p>
                     </div>
                   </div>
                   <div className="flex w-full sm:w-auto items-center justify-between gap-1.5 sm:gap-3">
                     <button 
                       onClick={() => setGoalModalOpen(true)}
-                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-xl bg-flinki-orange px-3 sm:px-6 py-3 text-[11px] sm:text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-flinki-orange/20 transition-all hover:bg-flinki-navy hover:shadow-xl hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"
+                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-3 sm:px-6 py-3 text-[11px] sm:text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-orange-500/20 transition-all hover:bg-slate-900 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"
                     >
                       <Target className="hidden sm:block h-4 w-4" />
                       Create Goal
                     </button>
                     <button 
                       onClick={() => window.dispatchEvent(new CustomEvent('open-modal', { detail: 'export-cv' }))}
-                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-xl bg-flinki-orange px-3 sm:px-6 py-3 text-[11px] sm:text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-flinki-orange/20 transition-all hover:bg-flinki-navy hover:shadow-xl hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"
+                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-3 sm:px-6 py-3 text-[11px] sm:text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-orange-500/20 transition-all hover:bg-slate-900 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"
                     >
                       <Share2 className="hidden sm:block h-4 w-4" />
                       Share CV
                     </button>
                     <button 
                       onClick={() => window.dispatchEvent(new CustomEvent('open-modal', { detail: 'add-achievement' }))}
-                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-xl bg-flinki-orange px-3 sm:px-6 py-3 text-[11px] sm:text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-flinki-orange/20 transition-all hover:bg-flinki-navy hover:shadow-xl hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"
+                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-3 sm:px-6 py-3 text-[11px] sm:text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-orange-500/20 transition-all hover:bg-slate-900 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"
                     >
                       <PlusCircle className="hidden sm:block h-4 w-4" />
                       Manual Entry

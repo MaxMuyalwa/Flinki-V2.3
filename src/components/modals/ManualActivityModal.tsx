@@ -93,7 +93,7 @@ export default function ManualActivityModal({ isOpen, onClose, onSave, achieveme
                         onClick={() => setFormData({ ...formData, type })}
                         className={`rounded-xl border-2 py-2.5 text-[8px] sm:text-[9px] font-black uppercase tracking-widest transition-all ${
                           formData.type === type
-                            ? 'border-flinki-blue bg-flinki-blue/10 text-flinki-blue shadow-lg shadow-flinki-blue/10'
+                            ? 'border-blue-500 bg-blue-500/10 text-blue-500 shadow-lg shadow-blue-500/10'
                             : 'border-border bg-secondary/20 text-muted-foreground hover:border-muted-foreground'
                         }`}
                       >
@@ -112,7 +112,7 @@ export default function ManualActivityModal({ isOpen, onClose, onSave, achieveme
                       placeholder="e.g. Morning Recovery Run"
                       value={formData.title}
                       onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                      className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all"
+                      className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all"
                       required
                     />
                   </div>
@@ -127,7 +127,7 @@ export default function ManualActivityModal({ isOpen, onClose, onSave, achieveme
                         type="date"
                         value={formData.date}
                         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                        className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all"
+                        className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all"
                         required
                       />
                     </div>
@@ -141,7 +141,7 @@ export default function ManualActivityModal({ isOpen, onClose, onSave, achieveme
                         placeholder="London, UK"
                         value={formData.location}
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                        className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all"
+                        className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all"
                       />
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function ManualActivityModal({ isOpen, onClose, onSave, achieveme
                 <button
                   type="button"
                   onClick={() => setStep(2)}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-flinki-navy py-3 text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-flinki-navy/20 hover:bg-flinki-blue transition-all active:scale-95"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-slate-900/20 hover:bg-blue-500 transition-all active:scale-95"
                 >
                   Next Details
                   <ChevronRight className="h-3.5 w-3.5" />
@@ -169,7 +169,7 @@ export default function ManualActivityModal({ isOpen, onClose, onSave, achieveme
                         placeholder="0.00"
                         value={formData.distance}
                         onChange={(e) => setFormData({ ...formData, distance: e.target.value })}
-                        className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all"
+                        className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all"
                         required
                       />
                     </div>
@@ -183,7 +183,7 @@ export default function ManualActivityModal({ isOpen, onClose, onSave, achieveme
                         placeholder="HH:MM:SS"
                         value={formData.duration}
                         onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
-                        className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all"
+                        className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all"
                         required
                       />
                     </div>
@@ -197,7 +197,7 @@ export default function ManualActivityModal({ isOpen, onClose, onSave, achieveme
                     <select
                       value={formData.achievementId}
                       onChange={(e) => setFormData({ ...formData, achievementId: e.target.value })}
-                      className="w-full appearance-none rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all"
+                      className="w-full appearance-none rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all"
                     >
                       <option value="">Select an achievement (optional)</option>
                       {achievements.map((ach) => (
@@ -215,7 +215,7 @@ export default function ManualActivityModal({ isOpen, onClose, onSave, achieveme
                       placeholder="How did it feel?"
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      className="h-24 w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all resize-none"
+                      className="h-24 w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all resize-none"
                     />
                   </div>
                 </div>
@@ -230,7 +230,7 @@ export default function ManualActivityModal({ isOpen, onClose, onSave, achieveme
                   </button>
                   <button
                     type="submit"
-                    className="flex-[2] rounded-xl bg-flinki-orange py-3 text-[10px] font-black uppercase tracking-widest text-white hover:bg-flinki-navy transition-all shadow-lg shadow-flinki-orange/20 active:scale-95"
+                    className="flex-[2] rounded-xl bg-orange-500 py-3 text-[10px] font-black uppercase tracking-widest text-white hover:bg-slate-900 transition-all shadow-lg shadow-orange-500/20 active:scale-95"
                   >
                     Save Activity
                   </button>

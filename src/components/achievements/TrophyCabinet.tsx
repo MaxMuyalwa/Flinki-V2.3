@@ -10,7 +10,7 @@ const trophies = [
     label: 'MARATHON', 
     subtitle: '6x Finisher', 
     date: 'Nov 2025', 
-    color: 'bg-flinki-navy', 
+    color: 'bg-slate-900', 
     image: PEXELS_IMAGES[5], 
     verified: true, 
     targetId: 3,
@@ -29,7 +29,7 @@ const trophies = [
     label: 'ULTRA 50K', 
     subtitle: 'Trail Certified', 
     date: 'Aug 2025', 
-    color: 'bg-flinki-gold', 
+    color: 'bg-yellow-500', 
     image: PEXELS_IMAGES[6], 
     verified: true, 
     targetId: 5,
@@ -46,7 +46,7 @@ const trophies = [
     label: 'SUB-20', 
     subtitle: '5K Personal Best', 
     date: 'Jun 2025', 
-    color: 'bg-flinki-blue', 
+    color: 'bg-blue-500', 
     image: PEXELS_IMAGES[7], 
     verified: true, 
     targetId: 3,
@@ -62,7 +62,7 @@ const trophies = [
     label: 'CREW', 
     subtitle: '25 Group Sessions', 
     date: 'Aug 2025', 
-    color: 'bg-flinki-purple', 
+    color: 'bg-purple-500', 
     image: PEXELS_IMAGES[8], 
     verified: false, 
     targetId: 4,
@@ -139,9 +139,9 @@ export default function TrophyCabinet({ onNavigate, onShare }: TrophyCabinetProp
           const element = document.getElementById(`timeline-event-${trophy.targetId}`);
           if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            element.classList.add('ring-2', 'ring-flinki-orange', 'ring-offset-4');
+            element.classList.add('ring-2', 'ring-orange-500', 'ring-offset-4');
             setTimeout(() => {
-              element.classList.remove('ring-2', 'ring-flinki-orange', 'ring-offset-4');
+              element.classList.remove('ring-2', 'ring-orange-500', 'ring-offset-4');
             }, 2000);
           }
         }, 100);
@@ -239,7 +239,7 @@ export default function TrophyCabinet({ onNavigate, onShare }: TrophyCabinetProp
                           <div className="my-1 h-px bg-white/10" />
                           <button 
                             onClick={(e) => handleAction(e, 'primary', currentTrophy.id)}
-                            className="flex w-full items-center gap-3 rounded-xl px-3.5 py-2.5 text-[10px] font-black uppercase tracking-widest text-flinki-orange hover:bg-white/10 transition-colors"
+                            className="flex w-full items-center gap-3 rounded-xl px-3.5 py-2.5 text-[10px] font-black uppercase tracking-widest text-orange-500 hover:bg-white/10 transition-colors"
                           >
                             <TrophyIcon className="h-3.5 w-3.5" />
                             Set Primary
@@ -258,10 +258,10 @@ export default function TrophyCabinet({ onNavigate, onShare }: TrophyCabinetProp
                         initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: isMobile ? 0 : 0.2, duration: isMobile ? 0 : 0.3 }}
-                        className="mb-2 flex items-center gap-1.5 rounded-full bg-flinki-green/20 px-2.5 py-0.5 backdrop-blur-md border border-flinki-green/30"
+                        className="mb-2 flex items-center gap-1.5 rounded-full bg-green-500/20 px-2.5 py-0.5 backdrop-blur-md border border-green-500/30"
                       >
-                        <ShieldCheck className="h-3 w-3 text-flinki-green" />
-                        <span className="text-[8px] font-black uppercase tracking-widest text-flinki-green">Verified Achievement</span>
+                        <ShieldCheck className="h-3 w-3 text-green-500" />
+                        <span className="text-[8px] font-black uppercase tracking-widest text-green-500">Verified Achievement</span>
                       </motion.div>
                     )}
                     <motion.h3 
@@ -303,7 +303,7 @@ export default function TrophyCabinet({ onNavigate, onShare }: TrophyCabinetProp
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 className={`h-1 transition-all duration-300 rounded-full ${
-                  currentIndex === idx ? 'w-6 bg-flinki-orange' : 'w-1.5 bg-white/30 hover:bg-white/50'
+                  currentIndex === idx ? 'w-6 bg-orange-500' : 'w-1.5 bg-white/30 hover:bg-white/50'
                 }`}
               />
             ))}
@@ -339,7 +339,7 @@ export default function TrophyCabinet({ onNavigate, onShare }: TrophyCabinetProp
           <div className="md:col-span-1 rounded-lg border border-border bg-card p-5">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-flinki-blue" />
+                <Users className="h-4 w-4 text-blue-500" />
                 <h4 className="text-sm font-bold uppercase tracking-wider">Associated Groups</h4>
               </div>
             </div>
@@ -348,7 +348,7 @@ export default function TrophyCabinet({ onNavigate, onShare }: TrophyCabinetProp
                 <div key={group.id} className="flex items-center gap-3 group cursor-pointer">
                   <img src={group.image} alt={group.name} className="h-10 w-10 rounded-lg object-cover" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold truncate group-hover:text-flinki-blue transition-colors">{group.name}</p>
+                    <p className="text-sm font-bold truncate group-hover:text-blue-500 transition-colors">{group.name}</p>
                     <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">{group.members.toLocaleString()} Members</p>
                   </div>
                   <ChevronRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-all" />
@@ -364,12 +364,12 @@ export default function TrophyCabinet({ onNavigate, onShare }: TrophyCabinetProp
           <div className="md:col-span-2 rounded-lg border border-border bg-card p-5">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Activity className="h-4 w-4 text-flinki-green" />
+                <Activity className="h-4 w-4 text-green-500" />
                 <h4 className="text-sm font-bold uppercase tracking-wider">Activity Logs</h4>
               </div>
               <button 
                 onClick={() => window.dispatchEvent(new CustomEvent('open-modal', { detail: 'add-activity' }))}
-                className="flex items-center gap-1.5 rounded-full bg-flinki-orange/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-flinki-orange hover:bg-flinki-orange/20 transition-colors"
+                className="flex items-center gap-1.5 rounded-full bg-orange-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-orange-500 hover:bg-orange-500/20 transition-colors"
               >
                 <Plus className="h-3 w-3" />
                 Manual Entry
@@ -381,9 +381,9 @@ export default function TrophyCabinet({ onNavigate, onShare }: TrophyCabinetProp
                 <div key={log.id} className="flex items-center justify-between rounded-lg border border-border/50 bg-secondary/30 p-3 hover:bg-secondary/50 transition-colors cursor-pointer">
                   <div className="flex items-center gap-3">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${
-                      log.type === 'Race' ? 'bg-flinki-orange/10 text-flinki-orange' : 
-                      log.type === 'Training' ? 'bg-flinki-blue/10 text-flinki-blue' : 
-                      'bg-flinki-purple/10 text-flinki-purple'
+                      log.type === 'Race' ? 'bg-orange-500/10 text-orange-500' : 
+                      log.type === 'Training' ? 'bg-blue-500/10 text-blue-500' : 
+                      'bg-purple-500/10 text-purple-500'
                     }`}>
                       <Activity className="h-5 w-5" />
                     </div>

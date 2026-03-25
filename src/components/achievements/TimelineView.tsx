@@ -11,7 +11,7 @@ export default function TimelineView({ achievement }: { achievement?: any }) {
         title: log.title,
         description: log.note || `Training session for ${achievement.title}`,
         icon: <Activity className="h-4 w-4" />,
-        color: 'bg-flinki-blue',
+        color: 'bg-blue-500',
         metrics: [
           { label: 'Dist', value: log.distance },
           { label: 'Time', value: log.time },
@@ -26,7 +26,7 @@ export default function TimelineView({ achievement }: { achievement?: any }) {
           type: 'goal_started',
           description: 'Officially started the journey to Dubai. Target: Sub-3:30.',
           icon: <Trophy className="h-4 w-4" />,
-          color: 'bg-flinki-blue'
+          color: 'bg-blue-500'
         },
         {
           id: 2,
@@ -35,7 +35,7 @@ export default function TimelineView({ achievement }: { achievement?: any }) {
           type: 'achievement_unlocked',
           description: 'Reached the annual goal of 1,000km logged in 2025.',
           icon: <CheckCircle className="h-4 w-4" />,
-          color: 'bg-flinki-green'
+          color: 'bg-green-500'
         },
         {
           id: 3,
@@ -44,7 +44,7 @@ export default function TimelineView({ achievement }: { achievement?: any }) {
           type: 'race_completed',
           description: 'Finished in 3:28:44. New Personal Best!',
           icon: <Trophy className="h-4 w-4" />,
-          color: 'bg-flinki-orange'
+          color: 'bg-orange-500'
         },
         {
           id: 4,
@@ -53,7 +53,7 @@ export default function TimelineView({ achievement }: { achievement?: any }) {
           type: 'milestone',
           description: 'Completed 95km in a single week. Highest volume ever.',
           icon: <Route className="h-4 w-4" />,
-          color: 'bg-flinki-purple'
+          color: 'bg-purple-500'
         },
         {
           id: 5,
@@ -62,7 +62,7 @@ export default function TimelineView({ achievement }: { achievement?: any }) {
           type: 'race_completed',
           description: 'First trail ultra completed in the Peak District.',
           icon: <Trophy className="h-4 w-4" />,
-          color: 'bg-flinki-gold'
+          color: 'bg-yellow-500'
         }
       ];
 
@@ -70,11 +70,11 @@ export default function TimelineView({ achievement }: { achievement?: any }) {
     <div className="mx-auto max-w-4xl py-4">
       {achievement && (
         <div className="mb-8 flex items-center gap-3 px-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-flinki-navy/10 text-flinki-navy">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900/10 text-slate-900">
             <Calendar className="h-5 w-5" />
           </div>
           <div>
-            <h3 className="text-sm font-black uppercase tracking-widest text-flinki-navy">{achievement.title} Timeline</h3>
+            <h3 className="text-sm font-black uppercase tracking-widest text-slate-900">{achievement.title} Timeline</h3>
             <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Progressive history of your training</p>
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function TimelineView({ achievement }: { achievement?: any }) {
                   {event.metrics.map((m: any, i: number) => (
                     <div key={i} className="flex items-center gap-1.5 rounded-lg bg-secondary/50 px-2 py-1">
                       <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/60">{m.label}:</span>
-                      <span className="text-xs font-black text-flinki-navy">{m.value}</span>
+                      <span className="text-xs font-black text-slate-900">{m.value}</span>
                     </div>
                   ))}
                 </div>

@@ -15,7 +15,7 @@ const trophies = [
     title: 'Marathon Finisher',
     description: 'Completed a full marathon distance (42.2km).',
     icon: <Award className="h-8 w-8" />,
-    color: 'bg-athlepulse-blue',
+    color: 'bg-blue-500',
     date: 'Nov 2025',
     isUnlocked: true,
   },
@@ -24,7 +24,7 @@ const trophies = [
     title: 'Early Bird',
     description: 'Logged 10 activities before 6:00 AM.',
     icon: <Star className="h-8 w-8" />,
-    color: 'bg-athlepulse-purple',
+    color: 'bg-purple-500',
     date: 'Oct 2025',
     isUnlocked: true,
   },
@@ -33,7 +33,7 @@ const trophies = [
     title: 'Consistent Climber',
     description: 'Gained over 5,000m of elevation in a month.',
     icon: <Medal className="h-8 w-8" />,
-    color: 'bg-athlepulse-orange',
+    color: 'bg-orange-500',
     date: 'Aug 2025',
     isUnlocked: true,
   },
@@ -42,7 +42,7 @@ const trophies = [
     title: 'Century Ride',
     description: 'Completed a 100km cycling activity.',
     icon: <CheckCircle2 className="h-8 w-8" />,
-    color: 'bg-athlepulse-green',
+    color: 'bg-green-500',
     date: 'Jul 2025',
     isUnlocked: true,
   },
@@ -61,8 +61,8 @@ export default function TrophyModal({ isOpen, onClose, onShare }: TrophyModalPro
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Trophy Cabinet">
       <div className="space-y-6">
-        <div className="rounded-lg bg-athlepulse-blue/5 p-4 text-center">
-          <p className="text-sm font-medium text-athlepulse-blue">
+        <div className="rounded-lg bg-blue-500/5 p-4 text-center">
+          <p className="text-sm font-medium text-blue-500">
             You've unlocked {trophies.filter(t => t.isUnlocked).length} out of {trophies.length} verified trophies!
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function TrophyModal({ isOpen, onClose, onShare }: TrophyModalPro
               {trophy.isUnlocked && (
                 <>
                   <div className="absolute top-3 right-3">
-                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-athlepulse-green text-white shadow-sm">
+                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-white shadow-sm">
                       <CheckCircle2 className="h-3 w-3" />
                     </div>
                   </div>
@@ -109,7 +109,7 @@ export default function TrophyModal({ isOpen, onClose, onShare }: TrophyModalPro
                           ]
                         });
                       }}
-                      className="absolute top-3 left-3 flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-muted-foreground opacity-100 sm:opacity-0 transition-all hover:bg-athlepulse-blue hover:text-white group-hover:opacity-100"
+                      className="absolute top-3 left-3 flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-muted-foreground opacity-100 sm:opacity-0 transition-all hover:bg-blue-500 hover:text-white group-hover:opacity-100"
                     >
                       <Share2 className="h-3 w-3" />
                     </button>

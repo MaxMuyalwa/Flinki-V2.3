@@ -33,7 +33,7 @@ export default function UserProfile() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-6 lg:px-6">
       <div className="mb-6">
-        <Link to="/profile" className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-flinki-blue">
+        <Link to="/profile" className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-blue-500">
           <ArrowLeft className="h-4 w-4" />
           Back to my profile
         </Link>
@@ -46,15 +46,15 @@ export default function UserProfile() {
           onClick={() => setIsFollowed(!isFollowed)}
           className={`flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-black uppercase tracking-widest text-white shadow-lg transition-all active:scale-95 ${
             isFollowed 
-              ? 'bg-flinki-orange shadow-flinki-orange/20' 
-              : 'bg-flinki-navy hover:bg-flinki-orange hover:shadow-flinki-orange/20'
+              ? 'bg-orange-500 shadow-orange-500/20' 
+              : 'bg-slate-900 hover:bg-orange-500 hover:shadow-orange-500/20'
           }`}
         >
           {isFollowed ? 'Requested' : `Follow ${user.name.split(' ')[0]}`}
         </button>
         <button 
           onClick={() => window.dispatchEvent(new CustomEvent('open-modal', { detail: { type: 'message', data: { name: user.name } } }))}
-          className="flex items-center gap-2 rounded-full border-2 border-flinki-navy bg-transparent px-8 py-3.5 text-sm font-black uppercase tracking-widest text-flinki-navy transition-all hover:bg-flinki-navy hover:text-white active:scale-95"
+          className="flex items-center gap-2 rounded-full border-2 border-slate-900 bg-transparent px-8 py-3.5 text-sm font-black uppercase tracking-widest text-slate-900 transition-all hover:bg-slate-900 hover:text-white active:scale-95"
         >
           <MessageSquare className="h-4 w-4" />
           Message
@@ -66,8 +66,8 @@ export default function UserProfile() {
         <div className="lg:col-span-1 space-y-6">
           <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-6 flex items-center gap-2">
-              <Users className="h-5 w-5 text-flinki-blue" />
-              <h3 className="text-xs font-black uppercase tracking-widest text-flinki-navy">Associated Groups</h3>
+              <Users className="h-5 w-5 text-blue-500" />
+              <h3 className="text-xs font-black uppercase tracking-widest text-slate-900">Associated Groups</h3>
             </div>
             
             <div className="space-y-4">
@@ -82,7 +82,7 @@ export default function UserProfile() {
               ))}
             </div>
             
-            <button className="mt-8 w-full rounded-xl border border-border py-3 text-[10px] font-black uppercase tracking-widest text-muted-foreground transition-all hover:bg-secondary hover:text-flinki-navy">
+            <button className="mt-8 w-full rounded-xl border border-border py-3 text-[10px] font-black uppercase tracking-widest text-muted-foreground transition-all hover:bg-secondary hover:text-slate-900">
               Find More Groups
             </button>
           </div>
@@ -93,16 +93,16 @@ export default function UserProfile() {
           <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-6 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Activity className="h-5 w-5 text-flinki-orange" />
-                <h3 className="text-xs font-black uppercase tracking-widest text-flinki-navy">Activity Logs</h3>
+                <Activity className="h-5 w-5 text-orange-500" />
+                <h3 className="text-xs font-black uppercase tracking-widest text-slate-900">Activity Logs</h3>
               </div>
             </div>
 
             <div className="space-y-3">
               {user.activityLogs?.map((log: any) => (
-                <div key={log.id} className="flex items-center justify-between rounded-xl border border-border bg-secondary/30 p-4 transition-all hover:border-flinki-blue/30">
+                <div key={log.id} className="flex items-center justify-between rounded-xl border border-border bg-secondary/30 p-4 transition-all hover:border-blue-500/30">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-flinki-blue/10 text-flinki-blue">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/10 text-blue-500">
                       <Activity className="h-5 w-5" />
                     </div>
                     <div>
@@ -111,14 +111,14 @@ export default function UserProfile() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-black text-flinki-navy">{log.distance} • {log.duration}</p>
+                    <p className="text-sm font-black text-slate-900">{log.distance} • {log.duration}</p>
                     <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">{log.pace}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <button className="mt-6 w-full rounded-xl border border-border py-3 text-[10px] font-black uppercase tracking-widest text-muted-foreground transition-all hover:bg-secondary hover:text-flinki-navy">
+            <button className="mt-6 w-full rounded-xl border border-border py-3 text-[10px] font-black uppercase tracking-widest text-muted-foreground transition-all hover:bg-secondary hover:text-slate-900">
               View All Logs
             </button>
           </div>
@@ -129,17 +129,17 @@ export default function UserProfile() {
       <div className="space-y-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-flinki-orange/10 text-flinki-orange ring-1 ring-flinki-orange/20">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/10 text-orange-500 ring-1 ring-orange-500/20">
               <Trophy className="h-5 w-5" />
             </div>
             <div>
-              <h2 className="text-lg font-black uppercase tracking-tighter text-flinki-navy sm:text-xl">Achievement Journey</h2>
+              <h2 className="text-lg font-black uppercase tracking-tighter text-slate-900 sm:text-xl">Achievement Journey</h2>
               <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60">{user.name.split(' ')[0]}'s milestones & goals</p>
             </div>
           </div>
           <div className="flex w-full sm:w-auto items-center justify-between gap-1.5 sm:gap-3">
             <button 
-              className="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-xl bg-flinki-orange px-2 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-flinki-orange/20 transition-all hover:bg-flinki-navy hover:shadow-xl hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"
+              className="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-2 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-orange-500/20 transition-all hover:bg-slate-900 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"
             >
               <Share2 className="hidden sm:block h-4 w-4" />
               Share CV

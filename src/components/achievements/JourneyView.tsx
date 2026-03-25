@@ -24,7 +24,7 @@ export default function JourneyView({ achievements, onShare }: { achievements: a
   return (
     <div className="space-y-6">
       {/* Tab Bar */}
-      <div className="sticky top-14 z-40 rounded-lg border border-flinki-navy/20 bg-flinki-navy p-1 shadow-md backdrop-blur-md lg:top-16">
+      <div className="sticky top-14 z-40 rounded-lg border border-slate-900/20 bg-slate-900 p-1 shadow-md backdrop-blur-md lg:top-16">
         <div className="flex items-center justify-between">
           {['CV', 'Timeline', 'Activities'].map((tab) => (
             <button
@@ -32,7 +32,7 @@ export default function JourneyView({ achievements, onShare }: { achievements: a
               onClick={() => setActiveTab(tab)}
               className={`flex-1 rounded-md py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all ${
                 activeTab === tab
-                  ? 'bg-flinki-orange text-white shadow-lg'
+                  ? 'bg-orange-500 text-white shadow-lg'
                   : 'text-white/70 hover:text-white hover:bg-white/10'
               }`}
             >
@@ -47,14 +47,14 @@ export default function JourneyView({ achievements, onShare }: { achievements: a
         {(activeTab === 'CV' || activeTab === 'Timeline') && (
           <div className="w-full md:w-64 shrink-0 space-y-6">
             <div className="space-y-1">
-              <h3 className="px-3 mb-2 text-[10px] font-black uppercase tracking-widest text-flinki-orange">Current Goals</h3>
+              <h3 className="px-3 mb-2 text-[10px] font-black uppercase tracking-widest text-orange-500">Current Goals</h3>
               {achievements.filter(a => a.status === 'ONGOING').map((achievement) => (
                 <button
                   key={achievement.id}
                   onClick={() => setSelectedAchievement(achievement)}
                   className={`group flex w-full items-center justify-between rounded-md px-3 py-2.5 text-left text-sm transition-all ${
                     currentAchievement.id === achievement.id
-                      ? 'bg-flinki-navy/10 font-bold text-flinki-navy'
+                      ? 'bg-slate-900/10 font-bold text-slate-900'
                       : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
                   }`}
                 >
@@ -64,14 +64,14 @@ export default function JourneyView({ achievements, onShare }: { achievements: a
             </div>
 
             <div className="space-y-1">
-              <h3 className="px-3 mb-2 text-[10px] font-black uppercase tracking-widest text-flinki-orange">Completed</h3>
+              <h3 className="px-3 mb-2 text-[10px] font-black uppercase tracking-widest text-orange-500">Completed</h3>
               {achievements.filter(a => a.status === 'COMPLETED').map((achievement) => (
                 <button
                   key={achievement.id}
                   onClick={() => setSelectedAchievement(achievement)}
                   className={`group flex w-full items-center justify-between rounded-md px-3 py-2.5 text-left text-sm transition-all ${
                     currentAchievement.id === achievement.id
-                      ? 'bg-flinki-navy/10 font-bold text-flinki-navy'
+                      ? 'bg-slate-900/10 font-bold text-slate-900'
                       : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
                   }`}
                 >
@@ -104,7 +104,7 @@ export default function JourneyView({ achievements, onShare }: { achievements: a
                 )}
                 <div className="absolute bottom-6 left-6">
                   <div className={`mb-2 inline-flex items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest text-white ${
-                    currentAchievement.status === 'COMPLETED' ? 'bg-flinki-navy' : 'bg-flinki-green'
+                    currentAchievement.status === 'COMPLETED' ? 'bg-slate-900' : 'bg-green-500'
                   }`}>
                     {currentAchievement.status}
                   </div>
@@ -151,27 +151,27 @@ export default function JourneyView({ achievements, onShare }: { achievements: a
                 <div className="mb-10">
                   <div className="mb-2 flex items-center justify-between text-sm font-bold">
                     <span className="uppercase tracking-widest text-muted-foreground">Training Progress</span>
-                    <span className="text-flinki-green">{currentAchievement.progress}%</span>
+                    <span className="text-green-500">{currentAchievement.progress}%</span>
                   </div>
                   <div className="h-3 w-full overflow-hidden rounded-full bg-secondary">
-                    <div className="h-full bg-flinki-green transition-all duration-500" style={{ width: `${currentAchievement.progress}%` }} />
+                    <div className="h-full bg-green-500 transition-all duration-500" style={{ width: `${currentAchievement.progress}%` }} />
                   </div>
                 </div>
 
                 {/* Additional Info: Goals & Durations */}
                 <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="mb-4 flex items-center gap-2 text-xs font-black uppercase tracking-widest text-flinki-navy">
-                      <Target className="h-5 w-5 text-flinki-orange" />
+                    <h4 className="mb-4 flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-900">
+                      <Target className="h-5 w-5 text-orange-500" />
                       Specific Goals
                     </h4>
                     <ul className="space-y-3">
                       <li className="flex items-center gap-3 text-base text-muted-foreground">
-                        <CheckCircle className="h-5 w-5 text-flinki-green" />
+                        <CheckCircle className="h-5 w-5 text-green-500" />
                         <span>Complete all long runs over 30km</span>
                       </li>
                       <li className="flex items-center gap-3 text-base text-muted-foreground">
-                        <CheckCircle className="h-5 w-5 text-flinki-green" />
+                        <CheckCircle className="h-5 w-5 text-green-500" />
                         <span>Maintain average pace of 5:00/km</span>
                       </li>
                       <li className="flex items-center gap-3 text-base text-muted-foreground">
@@ -181,8 +181,8 @@ export default function JourneyView({ achievements, onShare }: { achievements: a
                     </ul>
                   </div>
                   <div>
-                    <h4 className="mb-4 flex items-center gap-2 text-xs font-black uppercase tracking-widest text-flinki-navy">
-                      <Clock className="h-5 w-5 text-flinki-blue" />
+                    <h4 className="mb-4 flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-900">
+                      <Clock className="h-5 w-5 text-blue-500" />
                       Phase Durations
                     </h4>
                     <div className="space-y-3">
@@ -205,8 +205,8 @@ export default function JourneyView({ achievements, onShare }: { achievements: a
                 {/* Recent Logs */}
                 {currentAchievement.logs?.length > 0 && (
                   <div>
-                    <h4 className="mb-4 flex items-center gap-2 text-xs font-black uppercase tracking-widest text-flinki-navy">
-                      <Activity className="h-5 w-5 text-flinki-teal" />
+                    <h4 className="mb-4 flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-900">
+                      <Activity className="h-5 w-5 text-teal-500" />
                       Recent Training Logs
                     </h4>
                     <div className="space-y-3">
@@ -216,7 +216,7 @@ export default function JourneyView({ achievements, onShare }: { achievements: a
                             <h5 className="font-bold text-base text-foreground">{log.title}</h5>
                             <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{log.date}</span>
                           </div>
-                          <div className="mb-2 flex gap-4 text-xs font-black uppercase tracking-widest text-flinki-blue">
+                          <div className="mb-2 flex gap-4 text-xs font-black uppercase tracking-widest text-blue-500">
                             {log.distance && <span>{log.distance}</span>}
                             {log.time && <span>{log.time}</span>}
                             {log.pace && <span>{log.pace}</span>}

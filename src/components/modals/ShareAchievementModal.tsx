@@ -58,18 +58,18 @@ export default function ShareAchievementModal({ isOpen, onClose, achievement }: 
                     />
                   </div>
                 )}
-                <h3 className="mb-1 text-base sm:text-lg font-black uppercase tracking-widest text-flinki-navy">{achievement.title}</h3>
+                <h3 className="mb-1 text-base sm:text-lg font-black uppercase tracking-widest text-slate-900">{achievement.title}</h3>
                 <p className="text-[9px] sm:text-[10px] font-bold text-muted-foreground mb-4 uppercase tracking-wider leading-relaxed">
                   {achievement.description}
                 </p>
                 
                 {/* Metrics */}
                 {achievement.metrics && achievement.metrics.length > 0 && (
-                  <div className="grid grid-cols-2 gap-2 text-left bg-flinki-navy/5 border-2 border-flinki-navy/10 p-3 rounded-xl shadow-inner mb-4">
+                  <div className="grid grid-cols-2 gap-2 text-left bg-slate-900/5 border-2 border-slate-900/10 p-3 rounded-xl shadow-inner mb-4">
                     {achievement.metrics.map((metric: any, idx: number) => (
                       <div key={idx}>
                         <p className="text-[7px] font-black uppercase tracking-widest text-muted-foreground mb-0.5">{metric.label}</p>
-                        <p className="text-xs font-black text-flinki-navy">{metric.value}{metric.unit && <span className="ml-0.5 text-[9px] opacity-70">{metric.unit}</span>}</p>
+                        <p className="text-xs font-black text-slate-900">{metric.value}{metric.unit && <span className="ml-0.5 text-[9px] opacity-70">{metric.unit}</span>}</p>
                       </div>
                     ))}
                   </div>
@@ -106,7 +106,7 @@ export default function ShareAchievementModal({ isOpen, onClose, achievement }: 
                 </button>
               </div>
 
-              <div className="flex items-center gap-2 rounded-xl border-2 border-border bg-secondary/20 p-1.5 focus-within:border-flinki-blue focus-within:bg-white transition-all">
+              <div className="flex items-center gap-2 rounded-xl border-2 border-border bg-secondary/20 p-1.5 focus-within:border-blue-500 focus-within:bg-white transition-all">
                 <input
                   type="text"
                   value={shareLink}
@@ -115,7 +115,7 @@ export default function ShareAchievementModal({ isOpen, onClose, achievement }: 
                 />
                 <button
                   onClick={handleCopy}
-                  className="flex items-center gap-2 rounded-lg bg-flinki-navy px-3 py-2 text-[9px] font-black uppercase tracking-widest text-white hover:bg-flinki-blue transition-all active:scale-95 shadow-lg shadow-flinki-navy/20"
+                  className="flex items-center gap-2 rounded-lg bg-slate-900 px-3 py-2 text-[9px] font-black uppercase tracking-widest text-white hover:bg-blue-500 transition-all active:scale-95 shadow-lg shadow-slate-900/20"
                 >
                   {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
                   {copied ? 'Copied' : 'Copy'}

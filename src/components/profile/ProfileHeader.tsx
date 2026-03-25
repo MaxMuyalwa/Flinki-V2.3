@@ -51,7 +51,7 @@ export default function ProfileHeader({ user, activeGoal }: ProfileHeaderProps) 
         <div className="flex flex-col items-center text-center gap-4 sm:flex-row sm:items-start sm:text-left">
           {/* Profile Image */}
           <div className="shrink-0 relative h-20 w-20 sm:h-28 sm:w-28">
-            <svg className="absolute inset-0 h-full w-full -rotate-90 scale-110 drop-shadow-[0_0_8px_rgba(242,125,38,0.8)]" viewBox="0 0 100 100">
+            <svg className="absolute inset-0 h-full w-full -rotate-90 scale-110 drop-shadow-[0_0_8px_rgba(249,115,22,0.8)]" viewBox="0 0 100 100">
               <circle
                 cx="50"
                 cy="50"
@@ -59,7 +59,7 @@ export default function ProfileHeader({ user, activeGoal }: ProfileHeaderProps) 
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="4"
-                className="text-flinki-orange/20"
+                className="text-orange-500/20"
               />
               <circle
                 cx="50"
@@ -71,7 +71,7 @@ export default function ProfileHeader({ user, activeGoal }: ProfileHeaderProps) 
                 strokeDasharray="289.026"
                 strokeDashoffset="92.488"
                 strokeLinecap="round"
-                className="text-flinki-orange"
+                className="text-orange-500"
               />
             </svg>
             <img
@@ -83,21 +83,21 @@ export default function ProfileHeader({ user, activeGoal }: ProfileHeaderProps) 
           </div>
           <div className="flex-1 space-y-1">
             <div className="flex items-center gap-2 justify-center sm:justify-start">
-              <h1 className="text-2xl font-black tracking-tight sm:text-3xl text-flinki-navy uppercase">{user.name}</h1>
+              <h1 className="text-2xl font-black tracking-tight sm:text-3xl text-slate-900 uppercase">{user.name}</h1>
             </div>
             <p className="text-sm sm:text-base font-bold text-muted-foreground/80">{user.headline}</p>
             
             <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2 text-[10px] sm:text-xs font-black uppercase tracking-widest text-muted-foreground/60 sm:justify-start">
-              <div className="flex items-center gap-1.5 hover:text-flinki-navy transition-colors cursor-default">
-                <MapPin className="h-3.5 w-3.5 text-flinki-orange" />
+              <div className="flex items-center gap-1.5 hover:text-slate-900 transition-colors cursor-default">
+                <MapPin className="h-3.5 w-3.5 text-orange-500" />
                 {user.location}
               </div>
               <div className="flex items-center gap-1.5">
-                <LinkIcon className="h-3.5 w-3.5 text-flinki-blue" />
-                <a href="#" className="text-flinki-blue hover:text-flinki-navy transition-colors">flinki.com/{user?.name?.toLowerCase().replace(/\s+/g, '') || 'user'}</a>
+                <LinkIcon className="h-3.5 w-3.5 text-blue-500" />
+                <a href="#" className="text-blue-500 hover:text-slate-900 transition-colors">flinki.com/{user?.name?.toLowerCase().replace(/\s+/g, '') || 'user'}</a>
               </div>
-              <div className="flex items-center gap-1.5 hover:text-flinki-navy transition-colors cursor-pointer">
-                <Mail className="h-3.5 w-3.5 text-flinki-teal" />
+              <div className="flex items-center gap-1.5 hover:text-slate-900 transition-colors cursor-pointer">
+                <Mail className="h-3.5 w-3.5 text-teal-500" />
                 Contact
               </div>
             </div>
@@ -105,20 +105,20 @@ export default function ProfileHeader({ user, activeGoal }: ProfileHeaderProps) 
 
           {/* Stats Grid */}
           <div className="mt-4 flex w-full flex-col gap-3 sm:mt-0 sm:w-auto sm:flex-row sm:items-center sm:justify-end">
-            <div className="grid grid-cols-3 items-center gap-2 rounded-lg bg-flinki-navy/5 px-4 py-3 border border-flinki-navy/10 sm:flex sm:gap-5 sm:px-6">
+            <div className="grid grid-cols-3 items-center gap-2 rounded-lg bg-slate-900/5 px-4 py-3 border border-slate-900/10 sm:flex sm:gap-5 sm:px-6">
               <div className="text-center">
-                <p className="text-xl font-black leading-tight tracking-tight sm:text-2xl text-flinki-navy">{displayDistance}</p>
-                <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-flinki-blue">KM Dist</p>
+                <p className="text-xl font-black leading-tight tracking-tight sm:text-2xl text-slate-900">{displayDistance}</p>
+                <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-blue-500">KM Dist</p>
               </div>
-              <div className="hidden h-8 w-px bg-flinki-navy/10 sm:block" />
+              <div className="hidden h-8 w-px bg-slate-900/10 sm:block" />
               <div className="text-center">
-                <p className="text-xl font-black leading-tight tracking-tight sm:text-2xl text-flinki-navy">{displayMiddleValue}</p>
-                <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-flinki-blue">{displayMiddleLabel}</p>
+                <p className="text-xl font-black leading-tight tracking-tight sm:text-2xl text-slate-900">{displayMiddleValue}</p>
+                <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-blue-500">{displayMiddleLabel}</p>
               </div>
-              <div className="hidden h-8 w-px bg-flinki-navy/10 sm:block" />
+              <div className="hidden h-8 w-px bg-slate-900/10 sm:block" />
               <div className="text-center">
-                <p className="text-xl font-black leading-tight tracking-tight sm:text-2xl text-flinki-navy">{displayPace}</p>
-                <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-flinki-blue">Pace</p>
+                <p className="text-xl font-black leading-tight tracking-tight sm:text-2xl text-slate-900">{displayPace}</p>
+                <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-blue-500">Pace</p>
               </div>
             </div>
           </div>

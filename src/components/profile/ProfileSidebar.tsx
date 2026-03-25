@@ -35,7 +35,7 @@ export default function ProfileSidebar({ isScrolled }: ProfileSidebarProps) {
                 strokeWidth="4"
                 strokeDasharray="289"
                 strokeDashoffset={289 - (289 * 68) / 100}
-                className="text-flinki-orange drop-shadow-[0_0_8px_rgba(242,125,38,0.8)] transition-all duration-1000 ease-out"
+                className="text-orange-500 drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition-all duration-1000 ease-out"
                 strokeLinecap="round"
               />
             </svg>

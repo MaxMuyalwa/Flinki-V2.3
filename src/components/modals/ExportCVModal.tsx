@@ -25,8 +25,8 @@ export default function ExportCVModal({ isOpen, onClose }: ExportCVModalProps) {
           <div className="flex items-start justify-between">
             <div>
               <Logo className="h-4 sm:h-5 mb-2 sm:mb-3" />
-              <h3 className="text-lg sm:text-xl font-bold text-flinki-navy">Abigail Ndala</h3>
-              <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-flinki-orange">Endurance Athlete</p>
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900">Abigail Ndala</h3>
+              <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-orange-500">Endurance Athlete</p>
             </div>
             <img
               src={SARAH_AVATAR}
@@ -44,7 +44,7 @@ export default function ExportCVModal({ isOpen, onClose }: ExportCVModalProps) {
               { label: 'Profile Trust Score', val: '94%' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
-                <p className="text-base font-bold text-flinki-navy">{stat.val}</p>
+                <p className="text-base font-bold text-slate-900">{stat.val}</p>
                 <p className="text-[7px] font-bold uppercase tracking-widest text-muted-foreground">{stat.label}</p>
               </div>
             ))}
@@ -55,7 +55,7 @@ export default function ExportCVModal({ isOpen, onClose }: ExportCVModalProps) {
             <div className="flex gap-3">
               <div className="h-10 w-10 rounded-lg bg-secondary" />
               <div className="flex-1">
-                <p className="text-xs font-bold text-flinki-navy">Dubai Marathon 2026</p>
+                <p className="text-xs font-bold text-slate-900">Dubai Marathon 2026</p>
                 <p className="text-[9px] text-muted-foreground">Standard Chartered Dubai Marathon. Completed comprehensive 16-week training block.</p>
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function ExportCVModal({ isOpen, onClose }: ExportCVModalProps) {
 
         {/* Actions */}
         <div className="flex flex-col gap-3 sm:flex-row">
-          <button className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-flinki-navy py-3 text-[10px] font-black uppercase tracking-widest text-white shadow-xl shadow-flinki-navy/20 hover:bg-flinki-blue transition-all active:scale-95">
+          <button className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-[10px] font-black uppercase tracking-widest text-white shadow-xl shadow-slate-900/20 hover:bg-blue-500 transition-all active:scale-95">
             <Download className="h-4 w-4" />
             Save as PDF
           </button>
@@ -76,14 +76,14 @@ export default function ExportCVModal({ isOpen, onClose }: ExportCVModalProps) {
             onClick={handleCopy}
             className="flex flex-1 items-center justify-center gap-2 rounded-xl border-2 border-border bg-card py-3 text-[10px] font-black uppercase tracking-widest hover:bg-secondary transition-all active:scale-95"
           >
-            {copied ? <Check className="h-4 w-4 text-flinki-green" /> : <Share2 className="h-4 w-4" />}
+            {copied ? <Check className="h-4 w-4 text-emerald-500" /> : <Share2 className="h-4 w-4" />}
             {copied ? 'Copied!' : 'Copy Link'}
           </button>
         </div>
 
         <button 
           onClick={onClose}
-          className="flex w-full items-center justify-center gap-2 text-[9px] font-black uppercase tracking-widest text-muted-foreground hover:text-flinki-navy transition-colors"
+          className="flex w-full items-center justify-center gap-2 text-[9px] font-black uppercase tracking-widest text-muted-foreground hover:text-slate-900 transition-colors"
         >
           <ArrowLeft className="h-3 w-3" />
           Back to Profile

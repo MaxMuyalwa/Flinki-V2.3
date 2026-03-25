@@ -56,7 +56,7 @@ export default function Navbar() {
             <Logo className="h-6 sm:h-8" />
           </Link>
           {(location.pathname === '/explore') && (
-            <Link to="/feed" className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-muted-foreground hover:text-flinki-blue">
+            <Link to="/feed" className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-muted-foreground hover:text-blue-500">
               <ArrowLeft className="h-4 w-4" />
               <span>Back to Feed</span>
             </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
                 placeholder="Search Flinki" 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-9 w-full rounded-full border border-border bg-transparent pl-9 pr-3 sm:pr-4 text-xs sm:text-sm outline-none focus:border-flinki-blue focus:ring-1 focus:ring-flinki-blue transition-all"
+                className="h-9 w-full rounded-full border border-border bg-transparent pl-9 pr-3 sm:pr-4 text-xs sm:text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
               />
             </div>
             {searchQuery && (

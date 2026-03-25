@@ -38,7 +38,7 @@ export default function UserMenuDropdown({ onClose }: UserMenuDropdownProps) {
 
       <button 
         onClick={handleClick}
-        className="flex w-full items-center gap-3 rounded-lg p-2 text-sm font-bold text-flinki-orange hover:bg-flinki-orange/5 transition-colors"
+        className="flex w-full items-center gap-3 rounded-lg p-2 text-sm font-bold text-orange-500 hover:bg-orange-500/5 transition-colors"
       >
         <LogOut className="h-4 w-4" />
         <span>Sign Out</span>

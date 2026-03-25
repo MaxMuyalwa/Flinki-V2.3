@@ -63,7 +63,7 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
           <button
             onClick={() => setActiveTab('post')}
             className={`flex flex-col items-center justify-center gap-1 rounded-xl p-2 text-[10px] font-bold uppercase tracking-wider transition-all sm:flex-row sm:text-xs ${
-              activeTab === 'post' ? 'bg-flinki-navy text-white shadow-lg shadow-flinki-navy/20' : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
+              activeTab === 'post' ? 'bg-slate-900 text-white shadow-lg shadow-slate-900/20' : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
             }`}
           >
             <Send className="h-4 w-4" />
@@ -72,7 +72,7 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
           <button
             onClick={() => setActiveTab('activity')}
             className={`flex flex-col items-center justify-center gap-1 rounded-xl p-2 text-[10px] font-bold uppercase tracking-wider transition-all sm:flex-row sm:text-xs ${
-              activeTab === 'activity' ? 'bg-flinki-navy text-white shadow-lg shadow-flinki-navy/20' : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
+              activeTab === 'activity' ? 'bg-slate-900 text-white shadow-lg shadow-slate-900/20' : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
             }`}
           >
             <Activity className="h-4 w-4" />
@@ -81,7 +81,7 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
           <button
             onClick={() => setActiveTab('achievement')}
             className={`flex flex-col items-center justify-center gap-1 rounded-xl p-2 text-[10px] font-bold uppercase tracking-wider transition-all sm:flex-row sm:text-xs ${
-              activeTab === 'achievement' ? 'bg-flinki-navy text-white shadow-lg shadow-flinki-navy/20' : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
+              activeTab === 'achievement' ? 'bg-slate-900 text-white shadow-lg shadow-slate-900/20' : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
             }`}
           >
             <Trophy className="h-4 w-4" />
@@ -158,8 +158,8 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
             
             <div className="flex flex-wrap gap-2">
               {selectedTargets.map(target => (
-                <div key={target} className="flex items-center gap-2 rounded-full border border-flinki-navy bg-flinki-navy/5 px-3 py-1.5">
-                  <span className="text-[10px] font-bold text-flinki-navy">{target}</span>
+                <div key={target} className="flex items-center gap-2 rounded-full border border-slate-900 bg-slate-900/5 px-3 py-1.5">
+                  <span className="text-[10px] font-bold text-slate-900">{target}</span>
                   <button onClick={() => removeTarget(target)} className="text-muted-foreground hover:text-foreground">
                     <X className="h-3.5 w-3.5" />
                   </button>
@@ -167,7 +167,7 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
               ))}
               <button
                 onClick={() => setIsSelectTargetModalOpen(true)}
-                className="flex items-center gap-1.5 rounded-full border border-dashed border-border bg-secondary/30 px-3 py-1.5 text-[10px] font-bold text-muted-foreground hover:border-flinki-navy hover:text-flinki-navy transition-all"
+                className="flex items-center gap-1.5 rounded-full border border-dashed border-border bg-secondary/30 px-3 py-1.5 text-[10px] font-bold text-muted-foreground hover:border-slate-900 hover:text-slate-900 transition-all"
               >
                 <Plus className="h-3.5 w-3.5" />
                 Add Link
@@ -210,7 +210,7 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
           </div>
           <button 
             onClick={handlePost}
-            className="rounded-full bg-flinki-orange px-6 py-2.5 text-sm font-bold text-white hover:bg-flinki-orange/90 transition-all shadow-lg shadow-flinki-orange/20"
+            className="rounded-full bg-orange-500 px-6 py-2.5 text-sm font-bold text-white hover:bg-orange-500/90 transition-all shadow-lg shadow-orange-500/20"
           >
             Post
           </button>

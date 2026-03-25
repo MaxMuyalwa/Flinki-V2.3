@@ -14,7 +14,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
   const [targetDate, setTargetDate] = useState('');
   const [type, setType] = useState<'GOAL' | 'CHALLENGE'>('GOAL');
   const [metrics, setMetrics] = useState([{ label: '', value: '', unit: '' }]);
-  const [image, setImage] = useState('https://loremflickr.com/1200/800/sports');
+  const [image, setImage] = useState('https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=1200&q=80');
 
   const handleAddMetric = () => {
     setMetrics([...metrics, { label: '', value: '', unit: '' }]);
@@ -72,7 +72,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
           >
             <div className="flex items-center justify-between border-b border-border p-3 sm:p-4 bg-secondary/10">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-athlepulse-orange/10 text-athlepulse-orange shadow-inner">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500 shadow-inner">
                   <Trophy className="h-4 w-4" />
                 </div>
                 <div>
@@ -95,10 +95,10 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                   type="button"
                   onClick={() => setType('GOAL')}
                   className={`flex-1 flex flex-col items-center justify-center gap-2 rounded-xl border-2 p-3 sm:p-4 transition-all duration-300 ${
-                    type === 'GOAL' ? 'border-athlepulse-orange bg-athlepulse-orange/5 text-athlepulse-orange shadow-lg shadow-athlepulse-orange/10' : 'border-border hover:bg-secondary/50 text-muted-foreground'
+                    type === 'GOAL' ? 'border-orange-500 bg-orange-500/5 text-orange-500 shadow-lg shadow-orange-500/10' : 'border-border hover:bg-secondary/50 text-muted-foreground'
                   }`}
                 >
-                  <div className={`p-2 sm:p-2.5 rounded-lg ${type === 'GOAL' ? 'bg-athlepulse-orange text-white' : 'bg-secondary text-muted-foreground'}`}>
+                  <div className={`p-2 sm:p-2.5 rounded-lg ${type === 'GOAL' ? 'bg-orange-500 text-white' : 'bg-secondary text-muted-foreground'}`}>
                     <Target className="h-4 w-4 sm:h-5 sm:w-5" />
                   </div>
                   <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest">Personal Goal</span>
@@ -107,10 +107,10 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                   type="button"
                   onClick={() => setType('CHALLENGE')}
                   className={`flex-1 flex flex-col items-center justify-center gap-2 rounded-xl border-2 p-3 sm:p-4 transition-all duration-300 ${
-                    type === 'CHALLENGE' ? 'border-athlepulse-navy bg-athlepulse-navy/5 text-athlepulse-navy shadow-lg shadow-athlepulse-navy/10' : 'border-border hover:bg-secondary/50 text-muted-foreground'
+                    type === 'CHALLENGE' ? 'border-slate-900 bg-slate-900/5 text-slate-900 shadow-lg shadow-slate-900/10' : 'border-border hover:bg-secondary/50 text-muted-foreground'
                   }`}
                 >
-                  <div className={`p-2 sm:p-2.5 rounded-lg ${type === 'CHALLENGE' ? 'bg-athlepulse-navy text-white' : 'bg-secondary text-muted-foreground'}`}>
+                  <div className={`p-2 sm:p-2.5 rounded-lg ${type === 'CHALLENGE' ? 'bg-slate-900 text-white' : 'bg-secondary text-muted-foreground'}`}>
                     <Trophy className="h-4 w-4 sm:h-5 sm:w-5" />
                   </div>
                   <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest">Community Challenge</span>
@@ -127,7 +127,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="e.g., London Marathon 2026"
-                    className="w-full rounded-xl border-2 border-border bg-secondary/20 px-4 py-2.5 text-xs font-bold outline-none focus:border-athlepulse-orange focus:bg-white transition-all"
+                    className="w-full rounded-xl border-2 border-border bg-secondary/20 px-4 py-2.5 text-xs font-bold outline-none focus:border-orange-500 focus:bg-white transition-all"
                   />
                 </div>
                 <div>
@@ -138,7 +138,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="What's the story behind this goal?"
                     rows={2}
-                    className="w-full rounded-xl border-2 border-border bg-secondary/20 px-4 py-2.5 text-xs font-bold outline-none focus:border-athlepulse-orange focus:bg-white transition-all resize-none"
+                    className="w-full rounded-xl border-2 border-border bg-secondary/20 px-4 py-2.5 text-xs font-bold outline-none focus:border-orange-500 focus:bg-white transition-all resize-none"
                   />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -151,7 +151,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                         type="date"
                         value={targetDate}
                         onChange={(e) => setTargetDate(e.target.value)}
-                        className="w-full rounded-xl border-2 border-border bg-secondary/20 pl-10 pr-4 py-2.5 text-xs font-bold outline-none focus:border-athlepulse-orange focus:bg-white transition-all"
+                        className="w-full rounded-xl border-2 border-border bg-secondary/20 pl-10 pr-4 py-2.5 text-xs font-bold outline-none focus:border-orange-500 focus:bg-white transition-all"
                       />
                     </div>
                   </div>
@@ -163,7 +163,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                         type="url"
                         value={image}
                         onChange={(e) => setImage(e.target.value)}
-                        className="w-full rounded-xl border-2 border-border bg-secondary/20 pl-10 pr-4 py-2.5 text-xs font-bold outline-none focus:border-athlepulse-orange focus:bg-white transition-all"
+                        className="w-full rounded-xl border-2 border-border bg-secondary/20 pl-10 pr-4 py-2.5 text-xs font-bold outline-none focus:border-orange-500 focus:bg-white transition-all"
                       />
                     </div>
                   </div>
@@ -177,7 +177,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                   <button
                     type="button"
                     onClick={handleAddMetric}
-                    className="flex items-center gap-1.5 rounded-lg bg-athlepulse-blue/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-widest text-athlepulse-blue hover:bg-athlepulse-blue hover:text-white transition-all"
+                    className="flex items-center gap-1.5 rounded-lg bg-blue-500/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-widest text-blue-500 hover:bg-blue-500 hover:text-white transition-all"
                   >
                     <Plus className="h-3 w-3" />
                     Add Metric
@@ -193,7 +193,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                           placeholder="Label (e.g., Distance)"
                           value={metric.label}
                           onChange={(e) => handleMetricChange(index, 'label', e.target.value)}
-                          className="w-full rounded-xl border-2 border-border bg-secondary/20 px-3.5 py-2 text-[11px] font-bold outline-none focus:border-athlepulse-orange focus:bg-white transition-all"
+                          className="w-full rounded-xl border-2 border-border bg-secondary/20 px-3.5 py-2 text-[11px] font-bold outline-none focus:border-orange-500 focus:bg-white transition-all"
                         />
                       </div>
                       <div className="flex gap-2 sm:gap-3">
@@ -204,7 +204,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                             placeholder="Value"
                             value={metric.value}
                             onChange={(e) => handleMetricChange(index, 'value', e.target.value)}
-                            className="w-full rounded-xl border-2 border-border bg-secondary/20 px-3.5 py-2 text-[11px] font-bold outline-none focus:border-athlepulse-orange focus:bg-white transition-all"
+                            className="w-full rounded-xl border-2 border-border bg-secondary/20 px-3.5 py-2 text-[11px] font-bold outline-none focus:border-orange-500 focus:bg-white transition-all"
                           />
                         </div>
                         <div className="flex-1 sm:w-20">
@@ -214,7 +214,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                             placeholder="Unit"
                             value={metric.unit}
                             onChange={(e) => handleMetricChange(index, 'unit', e.target.value)}
-                            className="w-full rounded-xl border-2 border-border bg-secondary/20 px-3.5 py-2 text-[11px] font-bold outline-none focus:border-athlepulse-orange focus:bg-white transition-all"
+                            className="w-full rounded-xl border-2 border-border bg-secondary/20 px-3.5 py-2 text-[11px] font-bold outline-none focus:border-orange-500 focus:bg-white transition-all"
                           />
                         </div>
                         <button
@@ -232,13 +232,13 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
               </div>
 
               {/* Footer Info */}
-              <div className="rounded-xl bg-athlepulse-navy/5 p-3.5 border-2 border-athlepulse-navy/10 shadow-inner">
+              <div className="rounded-xl bg-slate-900/5 p-3.5 border-2 border-slate-900/10 shadow-inner">
                 <div className="flex gap-3">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-athlepulse-navy/10 text-athlepulse-navy">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-900/10 text-slate-900">
                     <Info className="h-4 w-4" />
                   </div>
                   <p className="text-[10px] font-bold text-muted-foreground leading-relaxed uppercase tracking-wider">
-                    Creating a goal will add it to your <span className="text-athlepulse-navy">Achievement Journey</span>. You can log activities against this goal to track your progress.
+                    Creating a goal will add it to your <span className="text-slate-900">Achievement Journey</span>. You can log activities against this goal to track your progress.
                   </p>
                 </div>
               </div>
@@ -253,7 +253,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 rounded-xl bg-athlepulse-navy py-3 text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-athlepulse-navy/20 hover:bg-athlepulse-orange hover:shadow-athlepulse-orange/20 transition-all active:scale-95"
+                  className="flex-1 rounded-xl bg-slate-900 py-3 text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-slate-900/20 hover:bg-orange-500 hover:shadow-orange-500/20 transition-all active:scale-95"
                 >
                   Create {type === 'GOAL' ? 'Goal' : 'Challenge'}
                 </button>

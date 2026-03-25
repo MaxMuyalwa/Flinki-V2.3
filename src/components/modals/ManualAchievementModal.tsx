@@ -14,19 +14,19 @@ export default function ManualAchievementModal({ isOpen, onClose, onSave }: Manu
     title: '',
     date: new Date().toISOString().split('T')[0],
     description: '',
-    image: 'https://loremflickr.com/1200/800/sports',
+    image: 'https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=1200&q=80',
     status: 'COMPLETED',
-    color: 'bg-flinki-navy',
+    color: 'bg-slate-900',
     verified: false
   });
 
   const colors = [
-    { name: 'Navy', class: 'bg-flinki-navy' },
-    { name: 'Orange', class: 'bg-flinki-orange' },
-    { name: 'Blue', class: 'bg-flinki-blue' },
-    { name: 'Green', class: 'bg-flinki-green' },
-    { name: 'Purple', class: 'bg-flinki-purple' },
-    { name: 'Gold', class: 'bg-flinki-gold' },
+    { name: 'Navy', class: 'bg-slate-900' },
+    { name: 'Orange', class: 'bg-orange-500' },
+    { name: 'Blue', class: 'bg-blue-500' },
+    { name: 'Green', class: 'bg-emerald-500' },
+    { name: 'Purple', class: 'bg-purple-500' },
+    { name: 'Gold', class: 'bg-yellow-500' },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -53,9 +53,9 @@ export default function ManualAchievementModal({ isOpen, onClose, onSave }: Manu
       title: '',
       date: new Date().toISOString().split('T')[0],
       description: '',
-      image: 'https://loremflickr.com/1200/800/sports',
+      image: 'https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=1200&q=80',
       status: 'COMPLETED',
-      color: 'bg-flinki-navy',
+      color: 'bg-slate-900',
       verified: false
     });
   };
@@ -104,7 +104,7 @@ export default function ManualAchievementModal({ isOpen, onClose, onSave }: Manu
                       placeholder="e.g. London Marathon 2026"
                       value={formData.title}
                       onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                      className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all"
+                      className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all"
                       required
                     />
                   </div>
@@ -119,7 +119,7 @@ export default function ManualAchievementModal({ isOpen, onClose, onSave }: Manu
                         type="date"
                         value={formData.date}
                         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                        className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all"
+                        className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all"
                         required
                       />
                     </div>
@@ -129,7 +129,7 @@ export default function ManualAchievementModal({ isOpen, onClose, onSave }: Manu
                     <select
                       value={formData.status}
                       onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                      className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 px-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all appearance-none"
+                      className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 px-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all appearance-none"
                     >
                       <option value="COMPLETED">Completed</option>
                       <option value="ONGOING">Ongoing</option>
@@ -147,7 +147,7 @@ export default function ManualAchievementModal({ isOpen, onClose, onSave }: Manu
                         type="button"
                         onClick={() => setFormData({ ...formData, color: color.class })}
                         className={`group relative h-8 w-8 rounded-lg transition-all ${color.class} ${
-                          formData.color === color.class ? 'ring-2 ring-flinki-blue ring-offset-2 scale-110 shadow-lg' : 'hover:scale-110 opacity-70 hover:opacity-100'
+                          formData.color === color.class ? 'ring-2 ring-blue-500 ring-offset-2 scale-110 shadow-lg' : 'hover:scale-110 opacity-70 hover:opacity-100'
                         }`}
                         title={color.name}
                       >
@@ -162,7 +162,7 @@ export default function ManualAchievementModal({ isOpen, onClose, onSave }: Manu
                 <button
                   type="button"
                   onClick={() => setStep(2)}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-flinki-navy py-3 text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-flinki-navy/20 hover:bg-flinki-blue transition-all active:scale-95"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-slate-900/20 hover:bg-blue-500 transition-all active:scale-95"
                 >
                   Next Details
                   <ChevronRight className="h-3.5 w-3.5" />
@@ -176,10 +176,10 @@ export default function ManualAchievementModal({ isOpen, onClose, onSave }: Manu
                     <ImageIcon className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                     <input
                       type="url"
-                      placeholder="https://loremflickr.com/..."
+                      placeholder="https://images.unsplash.com/..."
                       value={formData.image}
                       onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                      className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all"
+                      className="w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all"
                     />
                   </div>
                   <p className="mt-1.5 text-[8px] sm:text-[9px] font-bold text-muted-foreground italic uppercase tracking-wider">Leave empty for a default placeholder</p>
@@ -193,7 +193,7 @@ export default function ManualAchievementModal({ isOpen, onClose, onSave }: Manu
                       placeholder="Tell the story of this achievement..."
                       value={formData.description}
                       onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                      className="h-24 w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-flinki-blue focus:bg-white focus:outline-none transition-all resize-none"
+                      className="h-24 w-full rounded-xl border-2 border-border bg-secondary/20 py-2.5 pl-10 pr-4 text-xs font-bold focus:border-blue-500 focus:bg-white focus:outline-none transition-all resize-none"
                     />
                   </div>
                 </div>
@@ -208,7 +208,7 @@ export default function ManualAchievementModal({ isOpen, onClose, onSave }: Manu
                   </button>
                   <button
                     type="submit"
-                    className="flex-[2] rounded-xl bg-flinki-orange py-3 text-[10px] font-black uppercase tracking-widest text-white hover:bg-flinki-navy transition-all shadow-lg shadow-flinki-orange/20 active:scale-95"
+                    className="flex-[2] rounded-xl bg-orange-500 py-3 text-[10px] font-black uppercase tracking-widest text-white hover:bg-slate-900 transition-all shadow-lg shadow-orange-500/20 active:scale-95"
                   >
                     Save Entry
                   </button>

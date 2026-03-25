@@ -69,7 +69,7 @@ export default function App() {
           <Toaster 
             position="top-center"
             toastOptions={{
-              className: 'bg-flinki-navy text-white border-flinki-orange border-2 font-bold rounded-xl shadow-lg shadow-flinki-orange/20',
+              className: 'bg-slate-900 text-white border-orange-500 border-2 font-bold rounded-xl shadow-lg shadow-orange-500/20',
               style: {
                 background: '#1A1B41',
                 color: '#FFFFFF',

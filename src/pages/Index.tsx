@@ -123,7 +123,7 @@ export default function Index() {
                           setIsSortDropdownOpen(false);
                         }}
                         className={`flex w-full items-center px-4 py-2 text-left text-xs font-medium transition-colors hover:bg-secondary ${
-                          sortBy === option ? 'text-flinki-navy bg-secondary/50' : 'text-muted-foreground'
+                          sortBy === option ? 'text-slate-900 bg-secondary/50' : 'text-muted-foreground'
                         }`}
                       >
                         Sort by: {option}

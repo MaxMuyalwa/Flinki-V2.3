@@ -24,13 +24,13 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
-  --color-athlepulse-orange: hsl(var(--athlepulse-orange));
-  --color-athlepulse-navy: hsl(var(--athlepulse-navy));
-  --color-athlepulse-blue: hsl(var(--athlepulse-blue));
-  --color-athlepulse-green: hsl(var(--athlepulse-green));
-  --color-athlepulse-teal: hsl(var(--athlepulse-teal));
-  --color-athlepulse-purple: hsl(var(--athlepulse-purple));
-  --color-athlepulse-gold: hsl(var(--athlepulse-gold));
+  --color-orange-500: hsl(var(--orange-500));
+  --color-slate-900: hsl(var(--slate-900));
+  --color-blue-500: hsl(var(--blue-500));
+  --color-green-500: hsl(var(--green-500));
+  --color-teal-500: hsl(var(--teal-500));
+  --color-purple-500: hsl(var(--purple-500));
+  --color-yellow-500: hsl(var(--yellow-500));
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -60,13 +60,13 @@
     --ring: 220 25% 22%;
     --radius: 0.25rem;
 
-    --athlepulse-orange: 20 91% 48%;
-    --athlepulse-navy: 244 49% 20%;
-    --athlepulse-blue: 220 70% 55%;
-    --athlepulse-green: 145 63% 49%;
-    --athlepulse-teal: 170 50% 45%;
-    --athlepulse-purple: 260 50% 45%;
-    --athlepulse-gold: 40 85% 55%;
+    --orange-500: 20 91% 48%;
+    --slate-900: 244 49% 20%;
+    --blue-500: 220 70% 55%;
+    --green-500: 145 63% 49%;
+    --teal-500: 170 50% 45%;
+    --purple-500: 260 50% 45%;
+    --yellow-500: 40 85% 55%;
   }
 
   .dark {

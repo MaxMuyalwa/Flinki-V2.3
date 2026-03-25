@@ -47,7 +47,7 @@ export default function SelectTargetModal({ isOpen, onClose, onSelect }: SelectT
                 className="flex w-full items-center justify-between rounded-xl border border-border bg-secondary/30 p-3 transition-all hover:bg-secondary/50"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-flinki-orange text-white shadow-sm shadow-flinki-orange/20`}>
+                  <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-white shadow-sm shadow-orange-500/20`}>
                     <GoalIcon className="h-5 w-5" />
                   </div>
                   <div className="text-left">
@@ -74,7 +74,7 @@ export default function SelectTargetModal({ isOpen, onClose, onSelect }: SelectT
                 className="flex w-full items-center justify-between rounded-xl border border-border bg-secondary/30 p-3 transition-all hover:bg-secondary/50"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-flinki-navy text-white shadow-sm shadow-flinki-navy/20`}>
+                  <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-white shadow-sm shadow-slate-900/20`}>
                     <Trophy className="h-5 w-5" />
                   </div>
                   <div className="text-left">

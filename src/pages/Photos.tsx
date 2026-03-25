@@ -54,7 +54,7 @@ export default function Photos() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
       <div className="mb-8 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-flinki-blue">
+        <Link to="/" className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-blue-500">
           <ArrowLeft className="h-4 w-4" />
           Back to Feed
         </Link>
@@ -134,7 +134,7 @@ export default function Photos() {
                   
                   <div className="grid grid-cols-3 sm:grid-cols-1 gap-2 sm:gap-4">
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-3 rounded-lg bg-secondary/50 p-2 sm:p-3 text-center sm:text-left">
-                      <Smartphone className="h-4 w-4 sm:h-5 sm:w-5 text-flinki-blue shrink-0" />
+                      <Smartphone className="h-4 w-4 sm:h-5 sm:w-5 text-blue-500 shrink-0" />
                       <div className="min-w-0 w-full">
                         <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-muted-foreground truncate">Device</p>
                         <p className="text-[10px] sm:text-sm font-bold truncate">{selectedPhoto.device}</p>
@@ -142,7 +142,7 @@ export default function Photos() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-3 rounded-lg bg-secondary/50 p-2 sm:p-3 text-center sm:text-left">
-                      <Trophy className="h-4 w-4 sm:h-5 sm:w-5 text-flinki-orange shrink-0" />
+                      <Trophy className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 shrink-0" />
                       <div className="min-w-0 w-full">
                         <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-muted-foreground truncate">Goal</p>
                         <p className="text-[10px] sm:text-sm font-bold truncate">{selectedPhoto.achievement}</p>
@@ -150,7 +150,7 @@ export default function Photos() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-3 rounded-lg bg-secondary/50 p-2 sm:p-3 text-center sm:text-left">
-                      <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-flinki-green shrink-0" />
+                      <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 shrink-0" />
                       <div className="min-w-0 w-full">
                         <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-muted-foreground truncate">Location</p>
                         <p className="text-[10px] sm:text-sm font-bold truncate">{selectedPhoto.location}</p>
@@ -161,10 +161,10 @@ export default function Photos() {
                 
                 <div className="border-t border-border p-3 sm:p-4 shrink-0">
                   <div className="flex items-center gap-4 sm:gap-6 mb-2 sm:mb-3">
-                    <button className="flex items-center gap-1.5 text-foreground hover:text-flinki-blue transition-colors">
+                    <button className="flex items-center gap-1.5 text-foreground hover:text-blue-500 transition-colors">
                       <Heart className="h-5 w-5 sm:h-6 sm:w-6" />
                     </button>
-                    <button className="flex items-center gap-1.5 text-foreground hover:text-flinki-blue transition-colors">
+                    <button className="flex items-center gap-1.5 text-foreground hover:text-blue-500 transition-colors">
                       <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
                     </button>
                   </div>

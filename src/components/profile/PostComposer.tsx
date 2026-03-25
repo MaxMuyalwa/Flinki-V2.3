@@ -27,7 +27,7 @@ export default function PostComposer() {
         </Link>
         <button 
           onClick={openCreateModal}
-          className="flex-1 rounded-full border border-[#DCE6F2] bg-slate-50/50 py-2 sm:py-2.5 px-4 sm:px-5 text-left text-xs sm:text-sm font-medium text-[#5E768D] hover:bg-slate-100 transition-all hover:border-flinki-blue/30"
+          className="flex-1 rounded-full border border-[#DCE6F2] bg-slate-50/50 py-2 sm:py-2.5 px-4 sm:px-5 text-left text-xs sm:text-sm font-medium text-[#5E768D] hover:bg-slate-100 transition-all hover:border-blue-500/30"
         >
           Share your journey...
         </button>
@@ -36,11 +36,11 @@ export default function PostComposer() {
       <div className="mt-5 flex items-center justify-center sm:justify-start border-t border-border pt-4 px-1">
         <div className="flex items-center gap-8 sm:gap-12">
           <button onClick={openGoalModal} className="group transition-all">
-            <span className="text-[10px] font-black uppercase tracking-widest text-flinki-orange group-hover:opacity-80 transition-all whitespace-nowrap">Goal/Challenge</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-orange-500 group-hover:opacity-80 transition-all whitespace-nowrap">Goal/Challenge</span>
           </button>
           
           <button onClick={openExportModal} className="group transition-all">
-            <span className="text-[10px] font-black uppercase tracking-widest text-flinki-blue group-hover:opacity-80 transition-all whitespace-nowrap">Export CV</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-blue-500 group-hover:opacity-80 transition-all whitespace-nowrap">Export CV</span>
           </button>
         </div>
       </div>

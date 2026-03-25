@@ -26,7 +26,7 @@ export default function ProgressRing({ progress, size = 120, strokeWidth = 8, cl
           cy={size / 2}
         />
         <motion.circle
-          className="text-flinki-orange"
+          className="text-orange-500"
           strokeWidth={strokeWidth}
           strokeDasharray={circumference}
           initial={{ strokeDashoffset: circumference }}

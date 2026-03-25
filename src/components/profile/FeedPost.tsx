@@ -109,7 +109,7 @@ export default function FeedPost({
           </Link>
           <div>
             <div className="flex items-center gap-2">
-              <h4 className="text-sm font-bold hover:text-flinki-blue hover:underline cursor-pointer">
+              <h4 className="text-sm font-bold hover:text-blue-500 hover:underline cursor-pointer">
                 <Link to={`/profile/${user.name}`}>{user.name}</Link>
               </h4>
               {!isFollowing ? (
@@ -117,7 +117,7 @@ export default function FeedPost({
                   <span className="text-muted-foreground">•</span>
                   <button 
                     onClick={() => setIsFollowing(true)}
-                    className="text-sm font-bold text-flinki-blue hover:underline"
+                    className="text-sm font-bold text-blue-500 hover:underline"
                   >
                     Follow
                   </button>
@@ -211,12 +211,12 @@ export default function FeedPost({
             <div className="bg-blue-500 rounded-full p-0.5 border border-card"><ThumbsUp className="h-3 w-3 text-white" /></div>
             <div className="bg-red-500 rounded-full p-0.5 border border-card"><Heart className="h-3 w-3 text-white" /></div>
           </div>
-          <span className="ml-1 hover:text-flinki-blue hover:underline cursor-pointer">{likes}</span>
+          <span className="ml-1 hover:text-blue-500 hover:underline cursor-pointer">{likes}</span>
         </div>
         <div className="flex gap-2">
-          <span onClick={handleComment} className="hover:text-flinki-blue hover:underline cursor-pointer">{commentsCount} comments</span>
+          <span onClick={handleComment} className="hover:text-blue-500 hover:underline cursor-pointer">{commentsCount} comments</span>
           <span>•</span>
-          <span className="hover:text-flinki-blue hover:underline cursor-pointer">3 reposts</span>
+          <span className="hover:text-blue-500 hover:underline cursor-pointer">3 reposts</span>
         </div>
       </div>
 
@@ -225,7 +225,7 @@ export default function FeedPost({
         <button 
           onClick={handleLike}
           className={`flex flex-1 items-center justify-center gap-2 rounded-lg py-3 text-sm font-medium transition-colors ${
-            isLiked ? 'text-flinki-blue' : 'text-muted-foreground hover:bg-secondary'
+            isLiked ? 'text-blue-500' : 'text-muted-foreground hover:bg-secondary'
           }`}
         >
           <ThumbsUp className={`h-5 w-5 ${isLiked ? 'fill-current' : ''}`} /> 

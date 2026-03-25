@@ -24,7 +24,7 @@ export const mockUsers = {
         date: 'Oct 2025', 
         status: 'COMPLETED', 
         progress: 100, 
-        color: 'bg-flinki-navy',
+        color: 'bg-slate-900',
         description: 'The ultimate endurance test. Successfully completed the full Ironman distance in under 11 hours.',
         image: PEXELS_IMAGES[5],
         metrics: [
@@ -58,7 +58,7 @@ export const mockUsers = {
         date: 'Aug 2025', 
         status: 'COMPLETED', 
         progress: 100, 
-        color: 'bg-flinki-orange',
+        color: 'bg-orange-500',
         description: 'The most prestigious trail race in the world. 170km around Mont Blanc with 10,000m of elevation gain.',
         image: PEXELS_IMAGES[7],
         metrics: [
@@ -91,7 +91,7 @@ export const mockUsers = {
         date: 'Oct 2025', 
         status: 'COMPLETED', 
         progress: 100, 
-        color: 'bg-flinki-blue',
+        color: 'bg-blue-500',
         description: '240 miles through the desert. No sleep, just grit.',
         image: PEXELS_IMAGES[9],
         metrics: [
@@ -123,7 +123,7 @@ export const mockUsers = {
         date: 'Sep 2025', 
         status: 'COMPLETED', 
         progress: 100, 
-        color: 'bg-flinki-green',
+        color: 'bg-green-500',
         description: 'Another world-class performance in Berlin.',
         image: PEXELS_IMAGES[11],
         metrics: [

@@ -46,7 +46,7 @@ export default function RightWidgets() {
               <div key={i} className="flex gap-3">
                 <img src={user.avatar} alt={user.name} className="h-12 w-12 rounded-full object-cover" referrerPolicy="no-referrer" />
                 <div className="flex flex-col items-start justify-center">
-                  <p className="text-sm font-bold leading-tight hover:text-flinki-blue hover:underline cursor-pointer">
+                  <p className="text-sm font-bold leading-tight hover:text-blue-500 hover:underline cursor-pointer">
                     <Link to={`/profile/${user.name}`}>{user.name}</Link>
                   </p>
                   <p className="mb-2 text-xs text-muted-foreground line-clamp-2">{user.role}</p>

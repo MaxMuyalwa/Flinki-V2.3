@@ -48,11 +48,11 @@ export default function MessageModal({ isOpen, onClose, recipientName }: Message
           >
             <div className="flex items-center justify-between border-b border-border p-6">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-flinki-blue/10 text-flinki-blue">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500">
                   <MessageSquare className="h-5 w-5" />
                 </div>
                 <div>
-                  <h2 className="text-lg font-black uppercase tracking-tight text-flinki-navy">Message {recipientName}</h2>
+                  <h2 className="text-lg font-black uppercase tracking-tight text-slate-900">Message {recipientName}</h2>
                   <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Send a direct message</p>
                 </div>
               </div>
@@ -67,10 +67,10 @@ export default function MessageModal({ isOpen, onClose, recipientName }: Message
             <div className="p-6">
               {sent ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-flinki-green/10 text-flinki-green">
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-500">
                     <Send className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-bold text-flinki-navy">Message Sent!</h3>
+                  <h3 className="text-xl font-bold text-slate-900">Message Sent!</h3>
                   <p className="mt-2 text-sm text-muted-foreground">Your message has been delivered to {recipientName}.</p>
                 </div>
               ) : (
@@ -81,14 +81,14 @@ export default function MessageModal({ isOpen, onClose, recipientName }: Message
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder={`Hey ${recipientName.split(' ')[0]}, great run today!`}
-                      className="h-32 w-full resize-none rounded-2xl border border-border bg-secondary/30 p-4 text-sm font-medium focus:border-flinki-blue focus:outline-none focus:ring-1 focus:ring-flinki-blue"
+                      className="h-32 w-full resize-none rounded-2xl border border-border bg-secondary/30 p-4 text-sm font-medium focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                     />
                   </div>
 
                   <button
                     onClick={handleSend}
                     disabled={!message.trim() || isSending}
-                    className="flex w-full items-center justify-center gap-2 rounded-2xl bg-flinki-navy py-4 text-sm font-black uppercase tracking-widest text-white transition-all hover:bg-flinki-blue disabled:opacity-50 active:scale-[0.98]"
+                    className="flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-900 py-4 text-sm font-black uppercase tracking-widest text-white transition-all hover:bg-blue-500 disabled:opacity-50 active:scale-[0.98]"
                   >
                     {isSending ? (
                       <div className="h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white" />

@@ -25,7 +25,7 @@ export default function BottomNav() {
 
   return (
     <div className="fixed bottom-6 left-0 right-0 z-50 flex justify-center px-6 lg:hidden">
-      <nav className="relative flex w-full max-w-md items-center justify-between rounded-full bg-flinki-navy p-2 shadow-xl shadow-flinki-navy/20 outline outline-1 outline-white/10">
+      <nav className="relative flex w-full max-w-md items-center justify-between rounded-full bg-slate-900 p-2 shadow-xl shadow-slate-900/20 outline outline-1 outline-white/10">
         {navItems.map((item) => {
           const active = isActive(item.path);
           const Icon = item.icon;
@@ -45,7 +45,7 @@ export default function BottomNav() {
                 {active && (
                   <motion.div
                     layoutId="active-pill"
-                    className="absolute inset-0 rounded-full bg-flinki-orange shadow-lg shadow-flinki-orange/30"
+                    className="absolute inset-0 rounded-full bg-orange-500 shadow-lg shadow-orange-500/30"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                   />
                 )}

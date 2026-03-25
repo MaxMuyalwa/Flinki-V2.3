@@ -83,7 +83,7 @@ export default function CommentModal({ isOpen, onClose, postTitle }: CommentModa
                 </div>
                 <div className="mt-1 flex items-center gap-4 px-2">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{comment.time}</p>
-                  <button className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-muted-foreground hover:text-flinki-orange transition-colors">
+                  <button className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-muted-foreground hover:text-orange-500 transition-colors">
                     <Heart className="h-3 w-3" />
                     {comment.likes}
                   </button>
@@ -109,7 +109,7 @@ export default function CommentModal({ isOpen, onClose, postTitle }: CommentModa
             <button
               onClick={handleSend}
               disabled={!newComment.trim()}
-              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-flinki-navy p-2 text-white transition-all hover:bg-flinki-navy/90 disabled:opacity-50"
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-slate-900 p-2 text-white transition-all hover:bg-slate-900/90 disabled:opacity-50"
             >
               <Send className="h-4 w-4" />
             </button>
