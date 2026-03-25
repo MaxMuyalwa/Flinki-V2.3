@@ -18,6 +18,7 @@ import CommentModal from './components/modals/CommentModal';
 import DeleteConfirmationModal from './components/modals/DeleteConfirmationModal';
 import ShareAchievementModal from './components/modals/ShareAchievementModal';
 import MessageModal from './components/modals/MessageModal';
+import SearchModal from './components/modals/SearchModal';
 
 import { Toaster } from 'sonner';
 
@@ -118,6 +119,10 @@ export default function App() {
             isOpen={activeModal === 'message'}
             onClose={() => setActiveModal(null)}
             recipientName={modalData?.name || 'User'}
+          />
+          <SearchModal
+            isOpen={activeModal === 'search'}
+            onClose={() => setActiveModal(null)}
           />
         </div>
       </BrowserRouter>

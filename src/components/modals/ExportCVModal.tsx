@@ -1,5 +1,7 @@
 import { FileText, Download, Share2, ArrowLeft, Check } from 'lucide-react';
 import { useState } from 'react';
+import { jsPDF } from 'jspdf';
+import { toast } from 'sonner';
 import Logo from '../brand/Logo';
 import Modal from '../ui/Modal';
 import { SARAH_AVATAR } from '../../constants/images';
@@ -15,6 +17,65 @@ export default function ExportCVModal({ isOpen, onClose }: ExportCVModalProps) {
   const handleCopy = () => {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+    toast.success('Link copied to clipboard!');
+  };
+
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
+    
+    // Header
+    doc.setFontSize(20);
+    doc.setFont('helvetica', 'bold');
+    doc.text('flinki', 15, 20);
+    
+    doc.setFontSize(24);
+    doc.text('Abigail Ndala', 15, 35);
+    
+    doc.setFontSize(14);
+    doc.setTextColor(242, 125, 38); // Orange
+    doc.text('ENDURANCE ATHLETE', 15, 42);
+    doc.setTextColor(0, 0, 0); // Black
+
+    // Stats
+    doc.setDrawColor(200, 200, 200);
+    doc.line(15, 50, 195, 50);
+    
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text('TOTAL ACHIEVEMENTS', 25, 60);
+    doc.text('OFFICIAL RESULTS', 65, 60);
+    doc.text('KILOMETERS LOGGED', 110, 60);
+    doc.text('PROFILE TRUST SCORE', 160, 60);
+    
+    doc.setFontSize(18);
+    doc.setTextColor(0, 0, 0);
+    doc.text('47', 35, 70);
+    doc.text('12', 75, 70);
+    doc.text('8,420', 120, 70);
+    doc.text('94%', 170, 70);
+    
+    doc.line(15, 80, 195, 80);
+
+    // Milestones
+    doc.setFontSize(12);
+    doc.setTextColor(100, 100, 100);
+    doc.text('FEATURED MILESTONES', 15, 95);
+    
+    doc.setFontSize(14);
+    doc.setTextColor(0, 0, 0);
+    doc.text('Dubai Marathon 2026', 15, 105);
+    doc.setFontSize(10);
+    doc.text('Standard Chartered Dubai Marathon. Completed comprehensive 16-week training block.', 15, 112);
+    
+    doc.line(15, 125, 195, 125);
+
+    // Disclaimer
+    doc.setFontSize(8);
+    doc.setTextColor(150, 150, 150);
+    doc.text("The data presented in this document has been compiled and verified by Flinki's multi-layered trust engine.", 105, 135, { align: 'center' });
+
+    doc.save('abigail_ndala_cv.pdf');
+    toast.success('PDF downloaded successfully!');
   };
 
   return (
@@ -68,7 +129,7 @@ export default function ExportCVModal({ isOpen, onClose }: ExportCVModalProps) {
 
         {/* Actions */}
         <div className="flex flex-col gap-3 sm:flex-row">
-          <button className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-[10px] font-black uppercase tracking-widest text-white shadow-xl shadow-slate-900/20 hover:bg-blue-500 transition-all active:scale-95">
+          <button onClick={handleDownloadPDF} className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-[10px] font-black uppercase tracking-widest text-white shadow-xl shadow-slate-900/20 hover:bg-blue-500 transition-all active:scale-95">
             <Download className="h-4 w-4" />
             Save as PDF
           </button>

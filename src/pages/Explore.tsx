@@ -1,13 +1,13 @@
 import React from 'react';
-import { Search, MapPin, Users, Trophy, Flame, ChevronRight, Star, Clock, ArrowRight } from 'lucide-react';
+import { Search, Route, Users, Medal, Flame, ChevronRight, Star, CalendarRange, ArrowRight, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 
 import { PEXELS_IMAGES } from '../constants/images';
 
 const categories = [
-  { id: 'routes', name: 'Routes', icon: MapPin, color: 'bg-blue-500' },
-  { id: 'plans', name: 'Plans', icon: Clock, color: 'bg-orange-500' },
-  { id: 'challenges', name: 'Challenges', icon: Trophy, color: 'bg-emerald-500' },
+  { id: 'routes', name: 'Routes', icon: Route, color: 'bg-blue-500' },
+  { id: 'plans', name: 'Plans', icon: CalendarRange, color: 'bg-orange-500' },
+  { id: 'challenges', name: 'Challenges', icon: Medal, color: 'bg-emerald-500' },
   { id: 'clubs', name: 'Clubs', icon: Users, color: 'bg-purple-500' },
 ];
 

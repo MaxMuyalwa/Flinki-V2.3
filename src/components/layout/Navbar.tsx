@@ -1,51 +1,21 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Bell, Menu, Search, User, ArrowLeft } from 'lucide-react';
+import { Bell, Menu, Search, ArrowLeft } from 'lucide-react';
 import NotificationsDropdown from '../dropdowns/NotificationsDropdown';
 import UserMenuDropdown from '../dropdowns/UserMenuDropdown';
 import MobileMenuDropdown from '../dropdowns/MobileMenuDropdown';
 import Logo from '../brand/Logo';
-import SearchDropdown from '../dropdowns/SearchDropdown';
-import { initialPosts } from '../../data/posts';
 import { useAchievements } from '../../context/AchievementsContext';
 
 export default function Navbar() {
   const location = useLocation();
   const [showNotifications, setShowNotifications] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const { achievements } = useAchievements();
 
-  const searchResults = useMemo(() => {
-    if (!searchQuery) return [];
-    
-    const query = searchQuery?.toLowerCase() || '';
-    const users = initialPosts
-      .map(post => post.user)
-      .filter((user, index, self) => 
-        user?.name &&
-        index === self.findIndex((u) => u.name === user.name) &&
-        user.name.toLowerCase().includes(query)
-      )
-      .map(user => ({
-        id: user.name,
-        type: 'user' as const,
-        title: user.name,
-        subtitle: 'User',
-        avatar: user.avatar
-      }));
-
-    const foundAchievements = achievements
-      .filter(ach => ach?.title && ach.title.toLowerCase().includes(query))
-      .map(ach => ({
-        id: ach.id,
-        type: 'achievement' as const,
-        title: ach.title,
-        subtitle: 'Achievement'
-      }));
-
-    return [...users, ...foundAchievements];
-  }, [searchQuery, achievements]);
+  const openSearch = () => {
+    window.dispatchEvent(new CustomEvent('open-modal', { detail: 'search' }));
+  };
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-card/80 backdrop-blur-md">
@@ -65,21 +35,13 @@ export default function Navbar() {
 
         {/* Center: Search Bar */}
         <div className="flex justify-center w-full max-w-[160px] sm:max-w-xs lg:max-w-md px-2">
-          <div className="relative w-full">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <input 
-                type="text" 
-                placeholder="Search Flinki" 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-9 w-full rounded-full border border-border bg-transparent pl-9 pr-3 sm:pr-4 text-xs sm:text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
-              />
-            </div>
-            {searchQuery && (
-              <SearchDropdown results={searchResults} onClose={() => setSearchQuery('')} />
-            )}
-          </div>
+          <button 
+            onClick={openSearch}
+            className="flex h-9 w-full items-center gap-2 rounded-full border border-border bg-transparent px-3 text-xs sm:text-sm text-muted-foreground hover:border-blue-500 transition-all"
+          >
+            <Search className="h-4 w-4" />
+            <span>Search Flinki</span>
+          </button>
         </div>
 
         {/* Right: Actions */}

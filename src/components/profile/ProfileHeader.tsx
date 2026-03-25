@@ -1,4 +1,4 @@
-import { CheckCircle, MapPin, Link as LinkIcon, Mail, Share2 } from 'lucide-react';
+import { CheckCircle, MapPin, Link as LinkIcon, Mail, Share2, UserPlus } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface ProfileHeaderProps {
@@ -9,6 +9,8 @@ interface ProfileHeaderProps {
     banner: string;
     location: string;
     stats: { distance: string; elevation: string; pace: string };
+    followers?: number;
+    following?: number;
   };
   activeGoal?: any;
 }
@@ -82,11 +84,21 @@ export default function ProfileHeader({ user, activeGoal }: ProfileHeaderProps) 
             />
           </div>
           <div className="flex-1 space-y-1">
-            <div className="flex items-center gap-2 justify-center sm:justify-start">
+            <div className="flex items-center gap-4 justify-center sm:justify-start">
               <h1 className="text-2xl font-black tracking-tight sm:text-3xl text-slate-900 uppercase">{user.name}</h1>
+              <button className="flex items-center gap-1.5 rounded-full bg-slate-900 px-4 py-1.5 text-[10px] font-black uppercase tracking-widest text-white transition-all hover:bg-orange-500 hover:shadow-lg active:scale-95">
+                <UserPlus className="h-3 w-3" />
+                Follow
+              </button>
             </div>
             <p className="text-sm sm:text-base font-bold text-muted-foreground/80">{user.headline}</p>
             
+            {/* Follower Stats */}
+            <div className="flex justify-center sm:justify-start gap-4 text-[10px] sm:text-xs font-black uppercase tracking-widest text-slate-900 mt-2">
+              <span>{user.followers || 0} <span className="text-muted-foreground">Followers</span></span>
+              <span>{user.following || 0} <span className="text-muted-foreground">Following</span></span>
+            </div>
+
             <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2 text-[10px] sm:text-xs font-black uppercase tracking-widest text-muted-foreground/60 sm:justify-start">
               <div className="flex items-center gap-1.5 hover:text-slate-900 transition-colors cursor-default">
                 <MapPin className="h-3.5 w-3.5 text-orange-500" />

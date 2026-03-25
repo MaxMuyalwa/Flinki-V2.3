@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Send, Activity, Trophy, Image as ImageIcon, MapPin, Sparkles, Link as LinkIcon, X, Plus } from 'lucide-react';
+import { toast } from 'sonner';
 import Modal from '../ui/Modal';
 import SelectTargetModal from './SelectTargetModal';
 import { SARAH_AVATAR } from '../../constants/images';
@@ -11,19 +11,23 @@ interface CreatePostModalProps {
 }
 
 export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProps) {
-  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('post');
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedTargets, setSelectedTargets] = useState<string[]>([]);
   const [isSelectTargetModalOpen, setIsSelectTargetModalOpen] = useState(false);
 
+  const [content, setContent] = useState('');
+  const [activityTitle, setActivityTitle] = useState('');
+  const [achievementName, setAchievementName] = useState('');
+
   const handlePost = () => {
     // Dispatch event to add post to feed
     const event = new CustomEvent('add-post', {
       detail: {
         type: activeTab,
-        content: 'Just finished a great session!', // Placeholder
+        content: activeTab === 'post' ? content : (activeTab === 'activity' ? activityTitle : achievementName),
+        description: content,
         image: selectedImage,
         targets: selectedTargets,
         timestamp: 'Just now'
@@ -32,8 +36,7 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
     window.dispatchEvent(event);
     onClose();
     
-    // In mobile view (and generally), take user to feed default after posting
-    navigate('/');
+    toast.success('Post shared successfully!');
   };
 
   const addTarget = (target: string) => {
@@ -109,6 +112,8 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
             <input
               type="text"
               placeholder="Activity title (e.g. Morning Run)"
+              value={activityTitle}
+              onChange={(e) => setActivityTitle(e.target.value)}
               className="w-full rounded-lg border border-border bg-secondary/30 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
           )}
@@ -116,6 +121,8 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
             <input
               type="text"
               placeholder="Achievement name"
+              value={achievementName}
+              onChange={(e) => setAchievementName(e.target.value)}
               className="w-full rounded-lg border border-border bg-secondary/30 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
           )}
@@ -134,6 +141,8 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
               activeTab === 'activity' ? "How did it go? Any reflections..." :
               "Tell the story behind this achievement..."
             }
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
             className="min-h-[100px] w-full resize-none rounded-lg border border-border bg-secondary/30 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
           />
 

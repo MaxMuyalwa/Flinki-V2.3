@@ -20,6 +20,8 @@ const currentUser = {
   location: 'London, UK',
   website: 'abigailndala.run',
   stats: { distance: '28.7', elevation: '1,420', pace: '4\'45"' },
+  followers: 1240,
+  following: 850,
   groups: [
     { name: 'London Marathoners', members: '1.2k', avatar: PEXELS_IMAGES[1] },
     { name: 'Sub-4 Club', members: '850', avatar: PEXELS_IMAGES[2] }

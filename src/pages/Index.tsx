@@ -12,8 +12,20 @@ import { SARAH_AVATAR } from '../constants/images';
 export default function Index() {
   const [posts, setPosts] = useState(initialPosts);
   const [goalModalOpen, setGoalModalOpen] = useState(false);
-  const [sortBy, setSortBy] = useState('Top');
+  const [sortBy, setSortBy] = useState('Newest');
   const [isSortDropdownOpen, setIsSortDropdownOpen] = useState(false);
+
+  const parseTimestamp = (ts: string) => {
+    if (ts === 'Just now') return 0;
+    const match = ts.match(/(\d+)([hdm])/);
+    if (!match) return 0;
+    const val = parseInt(match[1]);
+    const unit = match[2];
+    if (unit === 'h') return val * 60;
+    if (unit === 'd') return val * 24 * 60;
+    if (unit === 'm') return val;
+    return 0;
+  };
 
   useEffect(() => {
     const handleOpenModal = (e: any) => {
@@ -138,8 +150,8 @@ export default function Index() {
           <div className="space-y-6">
             {posts
               .sort((a, b) => {
-                if (sortBy === 'Newest') return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
-                if (sortBy === 'Oldest') return new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
+                if (sortBy === 'Newest') return parseTimestamp(a.timestamp) - parseTimestamp(b.timestamp);
+                if (sortBy === 'Oldest') return parseTimestamp(b.timestamp) - parseTimestamp(a.timestamp);
                 return b.likes - a.likes; // Default Top
               })
               .map((post) => (

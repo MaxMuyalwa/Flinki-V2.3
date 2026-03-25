@@ -43,16 +43,6 @@ export default function UserProfile() {
 
       <div className="mb-8 flex justify-center gap-4">
         <button 
-          onClick={() => setIsFollowed(!isFollowed)}
-          className={`flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-black uppercase tracking-widest text-white shadow-lg transition-all active:scale-95 ${
-            isFollowed 
-              ? 'bg-orange-500 shadow-orange-500/20' 
-              : 'bg-slate-900 hover:bg-orange-500 hover:shadow-orange-500/20'
-          }`}
-        >
-          {isFollowed ? 'Requested' : `Follow ${user.name.split(' ')[0]}`}
-        </button>
-        <button 
           onClick={() => window.dispatchEvent(new CustomEvent('open-modal', { detail: { type: 'message', data: { name: user.name } } }))}
           className="flex items-center gap-2 rounded-full border-2 border-slate-900 bg-transparent px-8 py-3.5 text-sm font-black uppercase tracking-widest text-slate-900 transition-all hover:bg-slate-900 hover:text-white active:scale-95"
         >

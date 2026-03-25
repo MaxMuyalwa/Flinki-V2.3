@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Trophy, Target, Calendar, Image as ImageIcon, Plus, Trash2, Info } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface CreateGoalModalProps {
   isOpen: boolean;
@@ -46,6 +47,7 @@ export default function CreateGoalModal({ isOpen, onClose, onSave }: CreateGoalM
     };
     onSave(newGoal);
     onClose();
+    toast.success(`${type === 'GOAL' ? 'Goal' : 'Challenge'} created successfully!`);
     // Reset form
     setTitle('');
     setDescription('');
