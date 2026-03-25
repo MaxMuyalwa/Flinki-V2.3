@@ -50,27 +50,32 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-card/80 backdrop-blur-md">
       <div className="relative mx-auto flex h-14 items-center justify-between px-4 lg:h-16 lg:px-8 gap-2 sm:gap-4">
-        {/* Left: Logo */}
-        <Link to="/" className="flex items-center shrink-0">
-          <Logo className="h-6 sm:h-8" />
-        </Link>
-
-        {/* Center: Search Bar & Back to Feed */}
-        <div className="flex flex-1 items-center justify-center gap-2 sm:gap-4 px-2">
+        {/* Left: Logo & Back */}
+        <div className="flex flex-1 items-center gap-4 shrink-0">
+          <Link to="/" className="flex items-center">
+            <Logo className="h-6 sm:h-8" />
+          </Link>
           {(location.pathname === '/explore') && (
-            <Link to="/feed" className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-muted-foreground hover:text-flinki-blue shrink-0">
+            <Link to="/feed" className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-muted-foreground hover:text-flinki-blue">
               <ArrowLeft className="h-4 w-4" />
               <span>Back to Feed</span>
             </Link>
           )}
-          <div className="relative w-full max-w-[200px] sm:max-w-xs lg:max-w-md">
-            <input 
-              type="text" 
-              placeholder="Search Flinki" 
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="h-9 w-full rounded-full border border-border bg-transparent px-3 sm:px-4 text-xs sm:text-sm outline-none focus:border-flinki-blue focus:ring-1 focus:ring-flinki-blue transition-all"
-            />
+        </div>
+
+        {/* Center: Search Bar */}
+        <div className="flex justify-center w-full max-w-[160px] sm:max-w-xs lg:max-w-md px-2">
+          <div className="relative w-full">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <input 
+                type="text" 
+                placeholder="Search Flinki" 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="h-9 w-full rounded-full border border-border bg-transparent pl-9 pr-3 sm:pr-4 text-xs sm:text-sm outline-none focus:border-flinki-blue focus:ring-1 focus:ring-flinki-blue transition-all"
+              />
+            </div>
             {searchQuery && (
               <SearchDropdown results={searchResults} onClose={() => setSearchQuery('')} />
             )}
@@ -78,7 +83,7 @@ export default function Navbar() {
         </div>
 
         {/* Right: Actions */}
-        <div className="flex items-center gap-1 sm:gap-2 lg:gap-4 shrink-0">
+        <div className="flex flex-1 items-center justify-end gap-1 sm:gap-2 lg:gap-4 shrink-0">
           <div className="relative">
             <button
               onClick={() => {

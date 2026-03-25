@@ -14,12 +14,12 @@ interface ProfileHeaderProps {
 }
 
 export default function ProfileHeader({ user, activeGoal }: ProfileHeaderProps) {
-  const displayDistance = activeGoal ? activeGoal.distance.replace('km', '') : user.stats.distance;
-  const displayMiddleValue = activeGoal ? activeGoal.time : user.stats.elevation;
-  const displayMiddleLabel = activeGoal ? 'Time' : 'M Elev';
-  const displayPace = activeGoal ? activeGoal.pace.replace('/km', '') : user.stats.pace;
-  const progress = activeGoal ? activeGoal.progress : 68;
-  const title = activeGoal ? activeGoal.title : 'Dubai Marathon 2026';
+  const displayDistance = activeGoal?.distance ? activeGoal.distance.replace('km', '') : user.stats.distance;
+  const displayMiddleValue = activeGoal?.time ? activeGoal.time : user.stats.elevation;
+  const displayMiddleLabel = activeGoal?.time ? 'Time' : 'M Elev';
+  const displayPace = activeGoal?.pace ? activeGoal.pace.replace('/km', '') : user.stats.pace;
+  const progress = activeGoal?.progress ?? 68;
+  const title = activeGoal?.title ?? 'Dubai Marathon 2026';
 
   return (
     <div className="relative mb-8 overflow-hidden rounded-lg border border-border bg-card shadow-lg">
