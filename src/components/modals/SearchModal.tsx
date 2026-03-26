@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, MapPin, Star, Trophy, Users, Filter, ArrowRight } from 'lucide-react';
+import { Search, Filter, ArrowRight, ChevronDown } from 'lucide-react';
 import Modal from '../ui/Modal';
 import { initialPosts } from '../../data/posts';
 import { useAchievements } from '../../context/AchievementsContext';
@@ -13,7 +13,7 @@ interface SearchModalProps {
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState('');
-  const [filterType, setFilterType] = useState<'all' | 'user' | 'achievement' | 'post'>('all');
+  const [selectedFilters, setSelectedFilters] = useState<('user' | 'achievement' | 'post')[]>(['user', 'achievement', 'post']);
   const [sortBy, setSortBy] = useState<'relevance' | 'date' | 'popularity'>('relevance');
   const { achievements } = useAchievements();
 
@@ -27,6 +27,12 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     };
   }, [searchQuery]);
 
+  const toggleFilter = (filter: 'user' | 'achievement' | 'post') => {
+    setSelectedFilters(prev => 
+      prev.includes(filter) ? prev.filter(f => f !== filter) : [...prev, filter]
+    );
+  };
+
   const searchResults = useMemo(() => {
     if (!debouncedQuery) return [];
     
@@ -34,7 +40,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     
     let results: any[] = [];
 
-    if (filterType === 'all' || filterType === 'user') {
+    if (selectedFilters.includes('user')) {
       const users = initialPosts
         .map(post => post.user)
         .filter((user, index, self) => 
@@ -54,7 +60,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       results = [...results, ...users];
     }
 
-    if (filterType === 'all' || filterType === 'achievement') {
+    if (selectedFilters.includes('achievement')) {
       const foundAchievements = achievements
         .filter(ach => ach?.title && ach.title.toLowerCase().includes(query))
         .map(ach => ({
@@ -68,7 +74,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       results = [...results, ...foundAchievements];
     }
 
-    if (filterType === 'all' || filterType === 'post') {
+    if (selectedFilters.includes('post')) {
       const foundPosts = initialPosts
         .filter(post => post.description.toLowerCase().includes(query))
         .map(post => ({
@@ -87,7 +93,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       if (sortBy === 'popularity') return b.popularity - a.popularity;
       return 0;
     });
-  }, [debouncedQuery, achievements, filterType, sortBy]);
+  }, [debouncedQuery, achievements, selectedFilters, sortBy]);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Search">
@@ -103,19 +109,43 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
           />
         </div>
 
-        <div className="flex items-center gap-2 text-xs">
-          <Filter className="h-4 w-4 text-muted-foreground" />
-          <select value={filterType} onChange={(e) => setFilterType(e.target.value as any)} className="rounded bg-secondary p-1">
-            <option value="all">All</option>
-            <option value="user">Users</option>
-            <option value="achievement">Achievements</option>
-            <option value="post">Posts</option>
-          </select>
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value as any)} className="rounded bg-secondary p-1">
-            <option value="relevance">Relevance</option>
-            <option value="date">Date</option>
-            <option value="popularity">Popularity</option>
-          </select>
+        <div className="flex flex-col gap-2 text-xs">
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Filter className="h-4 w-4" />
+            <span>Filters</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {(['user', 'achievement', 'post'] as const).map(filter => (
+              <button 
+                key={filter}
+                onClick={() => toggleFilter(filter)}
+                className={`px-3 py-1.5 rounded-full text-xs font-bold capitalize transition-all ${
+                  selectedFilters.includes(filter) ? 'bg-primary text-primary-foreground' : 'bg-secondary hover:bg-secondary/80'
+                }`}
+              >
+                {filter}s
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2 text-xs">
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <span className="font-bold">Sort By</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {(['relevance', 'date', 'popularity'] as const).map(sort => (
+              <button 
+                key={sort}
+                onClick={() => setSortBy(sort)}
+                className={`px-3 py-1.5 rounded-full text-xs font-bold capitalize transition-all ${
+                  sortBy === sort ? 'bg-primary text-primary-foreground' : 'bg-secondary hover:bg-secondary/80'
+                }`}
+              >
+                {sort}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="max-h-[40vh] overflow-y-auto space-y-2">
